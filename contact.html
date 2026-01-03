@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Atlas Uganda Explorers</title>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script>
+        window.addEventListener('DOMContentLoaded', function() {
+            let headerLoaded = false;
+            let footerLoaded = false;
+            
+            function initializeIcons() {
+                if (headerLoaded && footerLoaded) {
+                    feather.replace();
+                }
+            }
+            
+            fetch('header.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('header-placeholder').innerHTML = data;
+                    headerLoaded = true;
+                    initializeIcons();
+                })
+                .catch(err => console.error('Error loading header:', err));
+            
+            fetch('footer.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('footer-placeholder').innerHTML = data;
+                    footerLoaded = true;
+                    initializeIcons();
+                })
+                .catch(err => console.error('Error loading footer:', err));
+            
+            setTimeout(function() {
+                feather.replace();
+            }, 100);
+        });
+    </script>
+</head>
+<body style="margin: 0; padding: 0; font-family: Cambria, 'Hoefler Text', Utopia, 'Liberation Serif', 'Nimbus Roman No9 L Regular', Times, 'Times New Roman', serif; background-color: #f5f5f5;">
+    <div id="header-placeholder"></div>
+
+    <!-- Page Header -->
+    <section style="background: linear-gradient(135deg, #4E342E 0%, #6D4C41 40%, #FF8F00 80%, #FFC107 100%); color: white; padding: 100px 20px 80px; text-align: center;">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <h1 style="font-size: 3rem; margin-bottom: 20px; font-weight: 700; text-shadow: 2px 2px 8px rgba(0,0,0,0.4);">
+                Get In Touch
+            </h1>
+            <p style="font-size: 1.2rem; opacity: 0.95; max-width: 700px; margin: 0 auto;">
+                Ready to start your adventure? Contact us today and let's plan your perfect Uganda experience
+            </p>
+        </div>
+    </section>
+
+    <!-- Contact Information -->
+    <section style="padding: 80px 20px; background-color: white;">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; margin-bottom: 80px;">
+                <div style="text-align: center; padding: 40px 30px; background: linear-gradient(135deg, #fafafa 0%, #f5f5f5 100%); border-radius: 15px; box-shadow: 0 2px 10px rgba(0,0,0,0.08); border-top: 4px solid #FF8F00;">
+                    <div style="margin-bottom: 25px; display: flex; justify-content: center;">
+                        <i data-feather="mail" style="width: 56px; height: 56px; stroke: #4E342E; stroke-width: 2;"></i>
+                    </div>
+                    <h3 style="color: #4E342E; margin-bottom: 15px; font-size: 1.5rem; font-weight: 600;">Email Us</h3>
+                    <p style="color: #666; line-height: 1.7; margin-bottom: 20px;">
+                        Send us an email anytime
+                    </p>
+                    <a href="mailto:atlasugandaexplorers@gmail.com" style="color: #FF8F00; text-decoration: none; font-weight: 600; font-size: 1.1rem;">
+                        atlasugandaexplorers@gmail.com
+                    </a>
+                </div>
+
+                <div style="text-align: center; padding: 40px 30px; background: linear-gradient(135deg, #fafafa 0%, #f5f5f5 100%); border-radius: 15px; box-shadow: 0 2px 10px rgba(0,0,0,0.08); border-top: 4px solid #FF8F00;">
+                    <div style="margin-bottom: 25px; display: flex; justify-content: center;">
+                        <i data-feather="phone" style="width: 56px; height: 56px; stroke: #4E342E; stroke-width: 2;"></i>
+                    </div>
+                    <h3 style="color: #4E342E; margin-bottom: 15px; font-size: 1.5rem; font-weight: 600;">Call or WhatsApp</h3>
+                    <p style="color: #666; line-height: 1.7; margin-bottom: 20px;">
+                        Available for calls and WhatsApp
+                    </p>
+                    <a href="tel:+256752983701" style="color: #FF8F00; text-decoration: none; font-weight: 600; font-size: 1.1rem; display: block; margin-bottom: 10px;">
+                        +256752983701
+                    </a>
+                    <span style="color: #999; font-size: 0.9rem;">Calls & WhatsApp</span>
+                </div>
+
+                <div style="text-align: center; padding: 40px 30px; background: linear-gradient(135deg, #fafafa 0%, #f5f5f5 100%); border-radius: 15px; box-shadow: 0 2px 10px rgba(0,0,0,0.08); border-top: 4px solid #FF8F00;">
+                    <div style="margin-bottom: 25px; display: flex; justify-content: center;">
+                        <i data-feather="map-pin" style="width: 56px; height: 56px; stroke: #4E342E; stroke-width: 2;"></i>
+                    </div>
+                    <h3 style="color: #4E342E; margin-bottom: 15px; font-size: 1.5rem; font-weight: 600;">Our Location</h3>
+                    <p style="color: #666; line-height: 1.7; margin-bottom: 20px;">
+                        Based in the heart of Uganda
+                    </p>
+                    <p style="color: #FF8F00; font-weight: 600; font-size: 1.1rem;">
+                        Jinja, Uganda 🇺🇬
+                    </p>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div style="max-width: 800px; margin: 0 auto;">
+                <div style="background: linear-gradient(135deg, #4E342E 0%, #6D4C41 50%, #4E342E 100%); border-radius: 20px; padding: 60px 40px; color: white; box-shadow: 0 10px 30px rgba(78, 52, 46, 0.3);">
+                    <h2 style="font-size: 2.5rem; margin-bottom: 15px; text-align: center; font-weight: 700;">
+                        Send Us a Message
+                    </h2>
+                    <p style="text-align: center; opacity: 0.9; margin-bottom: 40px; font-size: 1.1rem;">
+                        Fill out the form below and we'll get back to you as soon as possible
+                    </p>
+                    <form style="max-width: 600px; margin: 0 auto;">
+                        <div style="margin-bottom: 25px;">
+                            <input type="text" placeholder="Your Name" required style="width: 100%; padding: 15px; border: none; border-radius: 10px; font-size: 1rem; box-sizing: border-box; background: rgba(255,255,255,0.95); color: #333;">
+                        </div>
+                        <div style="margin-bottom: 25px;">
+                            <input type="email" placeholder="Your Email" required style="width: 100%; padding: 15px; border: none; border-radius: 10px; font-size: 1rem; box-sizing: border-box; background: rgba(255,255,255,0.95); color: #333;">
+                        </div>
+                        <div style="margin-bottom: 25px;">
+                            <input type="tel" placeholder="Phone Number (Optional)" style="width: 100%; padding: 15px; border: none; border-radius: 10px; font-size: 1rem; box-sizing: border-box; background: rgba(255,255,255,0.95); color: #333;">
+                        </div>
+                        <div style="margin-bottom: 30px;">
+                            <textarea placeholder="Your Message" rows="6" required style="width: 100%; padding: 15px; border: none; border-radius: 10px; font-size: 1rem; box-sizing: border-box; background: rgba(255,255,255,0.95); color: #333; resize: vertical;"></textarea>
+                        </div>
+                        <div style="text-align: center;">
+                            <button type="submit" style="background-color: #FF8F00; color: white; padding: 15px 50px; border: none; border-radius: 50px; font-weight: 600; font-size: 1.1rem; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(255, 143, 0, 0.5);">
+                                Send Message
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="footer-placeholder"></div>
+
+    <style>
+        * {
+            font-family: Cambria, 'Hoefler Text', Utopia, 'Liberation Serif', 'Nimbus Roman No9 L Regular', Times, 'Times New Roman', serif !important;
+        }
+        
+        a:hover {
+            transform: translateY(-2px);
+        }
+        
+        button:hover {
+            background-color: #FFA000 !important;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 143, 0, 0.6) !important;
+        }
+        
+        section div[style*="border-top: 4px solid"]:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(78, 52, 46, 0.15) !important;
+        }
+        
+        input:focus, textarea:focus {
+            outline: 3px solid #FFC107;
+            outline-offset: 2px;
+        }
+        
+        @media (max-width: 768px) {
+            section h1 { 
+                font-size: 2rem !important;
+                line-height: 1.2 !important;
+            }
+            section h2 { 
+                font-size: 1.75rem !important;
+            }
+            section h3 {
+                font-size: 1.3rem !important;
+            }
+            section[style*="padding: 100px 20px"] {
+                padding: 60px 20px !important;
+            }
+            section[style*="padding: 80px 20px"] {
+                padding: 50px 20px !important;
+            }
+            div[style*="grid-template-columns: repeat(auto-fit, minmax(300px"] {
+                grid-template-columns: 1fr !important;
+            }
+            div[style*="padding: 60px 40px"] {
+                padding: 40px 25px !important;
+            }
+            div[style*="padding: 40px 30px"] {
+                padding: 30px 20px !important;
+            }
+            form {
+                padding: 0 10px !important;
+            }
+            input[style*="padding: 15px"], textarea[style*="padding: 15px"] {
+                padding: 12px !important;
+                font-size: 0.95rem !important;
+            }
+            button[style*="padding: 15px 50px"] {
+                padding: 12px 30px !important;
+                font-size: 1rem !important;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            section h1 { 
+                font-size: 1.75rem !important;
+            }
+            section h2 { 
+                font-size: 1.5rem !important;
+            }
+            section[style*="padding: 100px 20px"] {
+                padding: 50px 15px !important;
+            }
+            section[style*="padding: 80px 20px"] {
+                padding: 40px 15px !important;
+            }
+            div[style*="padding: 60px 40px"] {
+                padding: 30px 20px !important;
+            }
+            div[style*="padding: 40px 30px"] {
+                padding: 25px 15px !important;
+            }
+            input[style*="padding: 15px"], textarea[style*="padding: 15px"] {
+                padding: 10px !important;
+                font-size: 0.9rem !important;
+            }
+            button[style*="padding: 15px 50px"] {
+                padding: 10px 25px !important;
+                font-size: 0.95rem !important;
+                width: 100%;
+            }
+        }
+    </style>
+</body>
+</html>
+

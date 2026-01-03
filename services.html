@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services - Atlas Uganda Explorers</title>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script>
+        window.addEventListener('DOMContentLoaded', function() {
+            let headerLoaded = false;
+            let footerLoaded = false;
+            
+            function initializeIcons() {
+                if (headerLoaded && footerLoaded) {
+                    feather.replace();
+                }
+            }
+            
+            fetch('header.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('header-placeholder').innerHTML = data;
+                    headerLoaded = true;
+                    initializeIcons();
+                })
+                .catch(err => console.error('Error loading header:', err));
+            
+            fetch('footer.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('footer-placeholder').innerHTML = data;
+                    footerLoaded = true;
+                    initializeIcons();
+                })
+                .catch(err => console.error('Error loading footer:', err));
+            
+            setTimeout(function() {
+                feather.replace();
+            }, 100);
+        });
+    </script>
+</head>
+<body style="margin: 0; padding: 0; font-family: Cambria, 'Hoefler Text', Utopia, 'Liberation Serif', 'Nimbus Roman No9 L Regular', Times, 'Times New Roman', serif; background-color: #f5f5f5;">
+    <div id="header-placeholder"></div>
+
+    <!-- Page Header -->
+    <section style="background: linear-gradient(135deg, #4E342E 0%, #6D4C41 40%, #FF8F00 80%, #FFC107 100%); color: white; padding: 100px 20px 80px; text-align: center;">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <h1 style="font-size: 3rem; margin-bottom: 20px; font-weight: 700; text-shadow: 2px 2px 8px rgba(0,0,0,0.4);">
+                Our Services
+            </h1>
+            <p style="font-size: 1.2rem; opacity: 0.95; max-width: 700px; margin: 0 auto;">
+                Comprehensive travel services tailored to create unforgettable experiences in Uganda
+            </p>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section style="padding: 80px 20px; background-color: white;">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 35px;">
+                <div style="text-align: center; padding: 0; border-radius: 15px; background: white; transition: transform 0.3s ease; box-shadow: 0 2px 10px rgba(0,0,0,0.08); border-top: 4px solid #FF8F00; overflow: hidden;">
+                    <div style="height: 220px; background-image: url('images/group.jpeg'); background-size: cover; background-position: center;"></div>
+                    <div style="padding: 40px 30px;">
+                        <div style="margin-bottom: 25px; display: flex; justify-content: center;">
+                            <i data-feather="users" style="width: 64px; height: 64px; stroke: #4E342E; stroke-width: 2;"></i>
+                        </div>
+                        <h3 style="color: #4E342E; margin-bottom: 15px; font-size: 1.6rem; font-weight: 600;">Customised Family & Group Tours</h3>
+                    <p style="color: #666; line-height: 1.7; margin-bottom: 20px;">
+                        Tailor-made travel experiences designed for families and groups of all sizes. We create itineraries that suit everyone's interests and needs.
+                    </p>
+                    <a href="contact.html" style="color: #FF8F00; text-decoration: none; font-weight: 600;">Learn More →</a>
+                </div>
+
+                <div style="text-align: center; padding: 0; border-radius: 15px; background: white; transition: transform 0.3s ease; box-shadow: 0 2px 10px rgba(0,0,0,0.08); border-top: 4px solid #FF8F00; overflow: hidden;">
+                    <div style="height: 220px; background-image: url('images/couple.jpeg'); background-size: cover; background-position: center;"></div>
+                    <div style="padding: 40px 30px;">
+                        <div style="margin-bottom: 25px; display: flex; justify-content: center;">
+                            <i data-feather="heart" style="width: 64px; height: 64px; stroke: #4E342E; stroke-width: 2;"></i>
+                        </div>
+                        <h3 style="color: #4E342E; margin-bottom: 15px; font-size: 1.6rem; font-weight: 600;">Honeymoon & Couple Trips</h3>
+                    <p style="color: #666; line-height: 1.7; margin-bottom: 20px;">
+                        Romantic getaways and intimate experiences for couples celebrating special moments. Create memories that last a lifetime.
+                    </p>
+                    <a href="contact.html" style="color: #FF8F00; text-decoration: none; font-weight: 600;">Learn More →</a>
+                </div>
+
+                <div style="text-align: center; padding: 0; border-radius: 15px; background: white; transition: transform 0.3s ease; box-shadow: 0 2px 10px rgba(0,0,0,0.08); border-top: 4px solid #FF8F00; overflow: hidden;">
+                    <div style="height: 220px; background-image: url('images/image1.jpeg'); background-size: cover; background-position: center;"></div>
+                    <div style="padding: 40px 30px;">
+                        <div style="margin-bottom: 25px; display: flex; justify-content: center;">
+                            <i data-feather="home" style="width: 64px; height: 64px; stroke: #4E342E; stroke-width: 2;"></i>
+                        </div>
+                        <h3 style="color: #4E342E; margin-bottom: 15px; font-size: 1.6rem; font-weight: 600;">Hotel Booking & Reservations</h3>
+                    <p style="color: #666; line-height: 1.7; margin-bottom: 20px;">
+                        Expert assistance with hotel bookings and accommodation reservations. We find the perfect place to stay for your needs and budget.
+                    </p>
+                    <a href="contact.html" style="color: #FF8F00; text-decoration: none; font-weight: 600;">Learn More →</a>
+                </div>
+
+                <div style="text-align: center; padding: 0; border-radius: 15px; background: white; transition: transform 0.3s ease; box-shadow: 0 2px 10px rgba(0,0,0,0.08); border-top: 4px solid #FF8F00; overflow: hidden;">
+                    <div style="height: 220px; background-image: url('images/onboat.jpeg'); background-size: cover; background-position: center;"></div>
+                    <div style="padding: 40px 30px;">
+                        <div style="margin-bottom: 25px; display: flex; justify-content: center;">
+                            <i data-feather="map-pin" style="width: 64px; height: 64px; stroke: #4E342E; stroke-width: 2;"></i>
+                        </div>
+                        <h3 style="color: #4E342E; margin-bottom: 15px; font-size: 1.6rem; font-weight: 600;">Jinja Tours & Adventure</h3>
+                    <p style="color: #666; line-height: 1.7; margin-bottom: 20px;">
+                        Explore the adventure capital of East Africa with thrilling Jinja tours. Experience the best of Uganda's adventure scene.
+                    </p>
+                    <a href="tours.html" style="color: #FF8F00; text-decoration: none; font-weight: 600;">Learn More →</a>
+                </div>
+
+                <div style="text-align: center; padding: 0; border-radius: 15px; background: white; transition: transform 0.3s ease; box-shadow: 0 2px 10px rgba(0,0,0,0.08); border-top: 4px solid #FF8F00; overflow: hidden;">
+                    <div style="height: 220px; background-image: url('images/falls.jpeg'); background-size: cover; background-position: center;"></div>
+                    <div style="padding: 40px 30px;">
+                        <div style="margin-bottom: 25px; display: flex; justify-content: center;">
+                            <i data-feather="mountain" style="width: 64px; height: 64px; stroke: #4E342E; stroke-width: 2;"></i>
+                        </div>
+                        <h3 style="color: #4E342E; margin-bottom: 15px; font-size: 1.6rem; font-weight: 600;">Sipi Falls Hiking & Adventure</h3>
+                    <p style="color: #666; line-height: 1.7; margin-bottom: 20px;">
+                        Discover the stunning Sipi Falls with guided hiking and adventure tours. Perfect for nature enthusiasts and hikers.
+                    </p>
+                    <a href="tours.html" style="color: #FF8F00; text-decoration: none; font-weight: 600;">Learn More →</a>
+                </div>
+
+                <div style="text-align: center; padding: 0; border-radius: 15px; background: white; transition: transform 0.3s ease; box-shadow: 0 2px 10px rgba(0,0,0,0.08); border-top: 4px solid #FF8F00; overflow: hidden;">
+                    <div style="height: 220px; background-image: url('images/falls2.jpeg'); background-size: cover; background-position: center;"></div>
+                    <div style="padding: 40px 30px;">
+                        <div style="margin-bottom: 25px; display: flex; justify-content: center;">
+                            <i data-feather="trending-up" style="width: 64px; height: 64px; stroke: #4E342E; stroke-width: 2;"></i>
+                        </div>
+                        <h3 style="color: #4E342E; margin-bottom: 15px; font-size: 1.6rem; font-weight: 600;">Mount Elgon Hiking & Adventure</h3>
+                    <p style="color: #666; line-height: 1.7; margin-bottom: 20px;">
+                        Conquer Mount Elgon with our expert-guided hiking and adventure experiences. For the ultimate mountain adventure.
+                    </p>
+                    <a href="tours.html" style="color: #FF8F00; text-decoration: none; font-weight: 600;">Learn More →</a>
+                </div>
+
+                <div style="text-align: center; padding: 0; border-radius: 15px; background: white; transition: transform 0.3s ease; box-shadow: 0 2px 10px rgba(0,0,0,0.08); border-top: 4px solid #FF8F00; overflow: hidden;">
+                    <div style="height: 220px; background-image: url('images/tourandguide.jpeg'); background-size: cover; background-position: center;"></div>
+                    <div style="padding: 40px 30px;">
+                        <div style="margin-bottom: 25px; display: flex; justify-content: center;">
+                            <i data-feather="compass" style="width: 64px; height: 64px; stroke: #4E342E; stroke-width: 2;"></i>
+                        </div>
+                        <h3 style="color: #4E342E; margin-bottom: 15px; font-size: 1.6rem; font-weight: 600;">Guided Tours & Safaris</h3>
+                    <p style="color: #666; line-height: 1.7; margin-bottom: 20px;">
+                        Professional guided tours and safaris to Uganda's most spectacular destinations. Expert guides ensure an unforgettable experience.
+                    </p>
+                    <a href="contact.html" style="color: #FF8F00; text-decoration: none; font-weight: 600;">Learn More →</a>
+                </div>
+
+                <div style="text-align: center; padding: 0; border-radius: 15px; background: white; transition: transform 0.3s ease; box-shadow: 0 2px 10px rgba(0,0,0,0.08); border-top: 4px solid #FF8F00; overflow: hidden;">
+                    <div style="height: 220px; background-image: url('images/whiteboat.jpeg'); background-size: cover; background-position: center;"></div>
+                    <div style="padding: 40px 30px;">
+                        <div style="margin-bottom: 25px; display: flex; justify-content: center;">
+                            <i data-feather="plane" style="width: 64px; height: 64px; stroke: #4E342E; stroke-width: 2;"></i>
+                        </div>
+                        <h3 style="color: #4E342E; margin-bottom: 15px; font-size: 1.6rem; font-weight: 600;">Airport Meet & Greet</h3>
+                    <p style="color: #666; line-height: 1.7; margin-bottom: 20px;">
+                        Seamless airport assistance and meet & greet services for a stress-free arrival. Start your journey the right way.
+                    </p>
+                    <a href="contact.html" style="color: #FF8F00; text-decoration: none; font-weight: 600;">Learn More →</a>
+                </div>
+
+                <div style="text-align: center; padding: 0; border-radius: 15px; background: white; transition: transform 0.3s ease; box-shadow: 0 2px 10px rgba(0,0,0,0.08); border-top: 4px solid #FF8F00; overflow: hidden;">
+                    <div style="height: 220px; background-image: url('images/whitegroup.jpeg'); background-size: cover; background-position: center;"></div>
+                    <div style="padding: 40px 30px;">
+                        <div style="margin-bottom: 25px; display: flex; justify-content: center;">
+                            <i data-feather="briefcase" style="width: 64px; height: 64px; stroke: #4E342E; stroke-width: 2;"></i>
+                        </div>
+                        <h3 style="color: #4E342E; margin-bottom: 15px; font-size: 1.6rem; font-weight: 600;">Corporate Team Building</h3>
+                    <p style="color: #666; line-height: 1.7; margin-bottom: 20px;">
+                        Engaging team building activities and corporate retreats in Uganda's natural settings. Build stronger teams while exploring nature.
+                    </p>
+                    <a href="contact.html" style="color: #FF8F00; text-decoration: none; font-weight: 600;">Learn More →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section style="padding: 80px 20px; background: linear-gradient(135deg, #4E342E 0%, #6D4C41 50%, #4E342E 100%); color: white; text-align: center;">
+        <div style="max-width: 800px; margin: 0 auto;">
+            <h2 style="font-size: 2.5rem; margin-bottom: 20px; font-weight: 700;">
+                Need Help Choosing?
+            </h2>
+            <p style="font-size: 1.2rem; margin-bottom: 40px; opacity: 0.9;">
+                Our travel experts are here to help you find the perfect service for your needs. Contact us for personalized recommendations.
+            </p>
+            <a href="contact.html" style="background-color: #FF8F00; color: white; padding: 15px 50px; text-decoration: none; border-radius: 50px; font-weight: 600; font-size: 1.1rem; transition: all 0.3s ease; display: inline-block; box-shadow: 0 4px 15px rgba(255, 143, 0, 0.5);">
+                Contact Us
+            </a>
+        </div>
+    </section>
+
+    <div id="footer-placeholder"></div>
+
+    <style>
+        * {
+            font-family: Cambria, 'Hoefler Text', Utopia, 'Liberation Serif', 'Nimbus Roman No9 L Regular', Times, 'Times New Roman', serif !important;
+        }
+        
+        section div[style*="border-top: 4px solid"]:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(78, 52, 46, 0.15) !important;
+        }
+        
+        a:hover {
+            transform: translateY(-2px);
+        }
+        
+        @media (max-width: 768px) {
+            section h1 { 
+                font-size: 2rem !important;
+                line-height: 1.2 !important;
+            }
+            section h2 { 
+                font-size: 1.75rem !important;
+            }
+            section h3 {
+                font-size: 1.4rem !important;
+            }
+            section[style*="padding: 100px 20px"] {
+                padding: 60px 20px !important;
+            }
+            section[style*="padding: 80px 20px"] {
+                padding: 50px 20px !important;
+            }
+            div[style*="grid-template-columns: repeat(auto-fit, minmax(300px"] {
+                grid-template-columns: 1fr !important;
+            }
+            div[style*="height: 220px"] {
+                height: 200px !important;
+            }
+            div[style*="padding: 40px 30px"] {
+                padding: 30px 20px !important;
+            }
+            a[style*="padding: 15px 50px"] {
+                padding: 12px 30px !important;
+                font-size: 1rem !important;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            section h1 { 
+                font-size: 1.75rem !important;
+            }
+            section h2 { 
+                font-size: 1.5rem !important;
+            }
+            section[style*="padding: 100px 20px"] {
+                padding: 50px 15px !important;
+            }
+            section[style*="padding: 80px 20px"] {
+                padding: 40px 15px !important;
+            }
+            div[style*="padding: 40px 30px"] {
+                padding: 25px 15px !important;
+            }
+            div[style*="height: 220px"] {
+                height: 180px !important;
+            }
+        }
+    </style>
+</body>
+</html>
+

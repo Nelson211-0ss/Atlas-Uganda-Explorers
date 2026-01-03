@@ -1,0 +1,127 @@
+<header style="background: linear-gradient(135deg, #4E342E 0%, #6D4C41 100%); color: white; padding: 0; box-shadow: 0 2px 10px rgba(0,0,0,0.2); position: sticky; top: 0; z-index: 1000;">
+    <nav style="max-width: 1200px; margin: 0 auto; padding: 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+        <a href="index.html" style="display: flex; align-items: center; gap: 15px; text-decoration: none; color: white;">
+            <i data-feather="globe" style="width: 32px; height: 32px; stroke: #FFC107; stroke-width: 2;"></i>
+            <div style="font-size: 2rem; font-weight: 700; letter-spacing: 1px; color: white;">
+                Atlas Uganda Explorers
+            </div>
+        </a>
+        <button class="menu-toggle" onclick="toggleMenu()" style="display: none; background: none; border: none; color: white; cursor: pointer; padding: 8px; font-size: 1.5rem; z-index: 1001;">
+            <i data-feather="menu" id="menu-icon" style="width: 28px; height: 28px; stroke: white; stroke-width: 2;"></i>
+        </button>
+        <ul class="nav-menu" style="display: flex; list-style: none; gap: 30px; margin: 0; padding: 0; flex-wrap: wrap; align-items: center;">
+            <li><a href="index.html" style="color: white; text-decoration: none; font-weight: 500; transition: color 0.3s ease; padding: 8px 0;">Home</a></li>
+            <li><a href="tours.html" style="color: white; text-decoration: none; font-weight: 500; transition: color 0.3s ease; padding: 8px 0;">Tours</a></li>
+            <li><a href="services.html" style="color: white; text-decoration: none; font-weight: 500; transition: color 0.3s ease; padding: 8px 0;">Services</a></li>
+            <li><a href="about.html" style="color: white; text-decoration: none; font-weight: 500; transition: color 0.3s ease; padding: 8px 0;">About</a></li>
+            <li><a href="contact.html" style="color: white; text-decoration: none; font-weight: 500; transition: color 0.3s ease; padding: 8px 0;">Contact</a></li>
+            <li><a href="contact.html" style="background-color: #FF8F00; color: white; padding: 10px 25px; text-decoration: none; border-radius: 25px; font-weight: 600; transition: all 0.3s ease; display: inline-block; box-shadow: 0 4px 15px rgba(255, 143, 0, 0.3);">Book Now</a></li>
+        </ul>
+    </nav>
+    <style>
+        header a:hover {
+            color: #FFC107 !important;
+            transform: translateY(-2px);
+        }
+        header a[style*="background-color"]:hover {
+            background-color: #FFA000 !important;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 143, 0, 0.4) !important;
+        }
+        header a[href="index.html"]:hover {
+            color: white !important;
+            opacity: 0.9;
+        }
+        
+        .menu-toggle {
+            transition: transform 0.3s ease;
+        }
+        
+        .menu-toggle:hover {
+            opacity: 0.8;
+        }
+        
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: row !important;
+                align-items: center !important;
+                justify-content: space-between !important;
+            }
+            
+            .menu-toggle {
+                display: block !important;
+            }
+            
+            .nav-menu {
+                display: none !important;
+                flex-direction: column !important;
+                gap: 12px !important;
+                width: 100% !important;
+                margin-top: 20px !important;
+                padding: 20px 0 !important;
+                background: rgba(78, 52, 46, 0.98) !important;
+                border-radius: 10px !important;
+            }
+            
+            .nav-menu.active {
+                display: flex !important;
+            }
+            
+            nav a[href="index.html"] div {
+                font-size: 1.5rem !important;
+            }
+            
+            nav a[style*="padding: 10px 25px"] {
+                padding: 8px 20px !important;
+                font-size: 0.9rem !important;
+                width: 100%;
+                text-align: center;
+            }
+            
+            .nav-menu li {
+                width: 100% !important;
+            }
+            
+            .nav-menu li a {
+                display: block !important;
+                padding: 12px 0 !important;
+                width: 100% !important;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            nav {
+                padding: 15px !important;
+            }
+            nav a[href="index.html"] div {
+                font-size: 1.25rem !important;
+            }
+            .nav-menu li a {
+                font-size: 0.95rem !important;
+            }
+        }
+    </style>
+    <script>
+        function toggleMenu() {
+            const menu = document.querySelector('.nav-menu');
+            const icon = document.getElementById('menu-icon');
+            menu.classList.toggle('active');
+            
+            // Change icon from menu to X when open
+            if (menu.classList.contains('active')) {
+                icon.setAttribute('data-feather', 'x');
+            } else {
+                icon.setAttribute('data-feather', 'menu');
+            }
+            feather.replace();
+        }
+        
+        // Initialize feather icons when header loads
+        if (typeof feather !== 'undefined') {
+            setTimeout(function() {
+                feather.replace();
+            }, 100);
+        }
+    </script>
+</header>
+

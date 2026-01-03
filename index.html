@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atlas Uganda Explorers - Gateway to Nature's Wonders</title>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script>
+        // Load header and footer automatically
+        window.addEventListener('DOMContentLoaded', function() {
+            let headerLoaded = false;
+            let footerLoaded = false;
+            
+            function initializeIcons() {
+                if (headerLoaded && footerLoaded) {
+                    feather.replace();
+                }
+            }
+            
+            // Load header
+            fetch('header.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('header-placeholder').innerHTML = data;
+                    headerLoaded = true;
+                    initializeIcons();
+                })
+                .catch(err => console.error('Error loading header:', err));
+            
+            // Load footer
+            fetch('footer.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('footer-placeholder').innerHTML = data;
+                    footerLoaded = true;
+                    initializeIcons();
+                })
+                .catch(err => console.error('Error loading footer:', err));
+            
+            // Initialize Feather icons for main content
+            setTimeout(function() {
+                feather.replace();
+            }, 100);
+        });
+        
+        // Image Slider Functionality
+        let currentSlideIndex = 0;
+        let slides = [];
+        let dots = [];
+        
+        function initSlider() {
+            slides = document.getElementsByClassName('slide');
+            dots = document.getElementsByClassName('slider-dot');
+            if (slides.length > 0) {
+                showSlide(0);
+                // Auto-advance slides every 5 seconds
+                setInterval(nextSlide, 5000);
+            }
+        }
+        
+        function showSlide(n) {
+            if (slides.length === 0) return;
+            
+            if (n >= slides.length) { currentSlideIndex = 0; }
+            if (n < 0) { currentSlideIndex = slides.length - 1; }
+            
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.opacity = '0';
+                if (dots[i]) dots[i].style.opacity = '0.4';
+            }
+            
+            slides[currentSlideIndex].style.opacity = '1';
+            if (dots[currentSlideIndex]) dots[currentSlideIndex].style.opacity = '0.7';
+        }
+        
+        function nextSlide() {
+            currentSlideIndex++;
+            if (currentSlideIndex >= slides.length) { currentSlideIndex = 0; }
+            showSlide(currentSlideIndex);
+        }
+        
+        function currentSlide(n) {
+            currentSlideIndex = n;
+            showSlide(currentSlideIndex);
+        }
+        
+        // Initialize slider when DOM is ready
+        window.addEventListener('DOMContentLoaded', function() {
+            setTimeout(initSlider, 200);
+        });
+    </script>
+</head>
+<body style="margin: 0; padding: 0; font-family: Cambria, 'Hoefler Text', Utopia, 'Liberation Serif', 'Nimbus Roman No9 L Regular', Times, 'Times New Roman', serif; background-color: #f5f5f5;">
+    <!-- Header placeholder -->
+    <div id="header-placeholder"></div>
+
+    <!-- Hero Section with Image Slider -->
+    <section style="position: relative; overflow: hidden; min-height: 100vh; display: flex; align-items: center;">
+        <!-- Image Slider -->
+        <div id="hero-slider" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1;">
+            <div class="slide active" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url('images/atsource.jpeg'); background-size: cover; background-position: center; opacity: 1; transition: opacity 1s ease-in-out;"></div>
+            <div class="slide" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url('images/falls.jpeg'); background-size: cover; background-position: center; opacity: 0; transition: opacity 1s ease-in-out;"></div>
+            <div class="slide" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url('images/group.jpeg'); background-size: cover; background-position: center; opacity: 0; transition: opacity 1s ease-in-out;"></div>
+            <div class="slide" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url('images/onboat.jpeg'); background-size: cover; background-position: center; opacity: 0; transition: opacity 1s ease-in-out;"></div>
+            <div class="slide" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url('images/tourandguide.jpeg'); background-size: cover; background-position: center; opacity: 0; transition: opacity 1s ease-in-out;"></div>
+        </div>
+        
+        <!-- Overlay -->
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, rgba(78, 52, 46, 0.75) 0%, rgba(109, 76, 65, 0.7) 40%, rgba(255, 143, 0, 0.6) 80%, rgba(255, 193, 7, 0.5) 100%); z-index: 2;"></div>
+        
+        <!-- Content -->
+        <div style="max-width: 1200px; margin: 0 auto; position: relative; z-index: 3; padding: 120px 20px; text-align: center; width: 100%;">
+            <h1 style="font-size: 3.5rem; margin-bottom: 20px; font-weight: 700; text-shadow: 2px 2px 8px rgba(0,0,0,0.5); animation: fadeIn 1s ease-in; color: white;">
+                Welcome to Atlas Uganda Explorers
+            </h1>
+            <p style="font-size: 1.5rem; margin-bottom: 30px; opacity: 0.98; max-width: 800px; margin-left: auto; margin-right: auto; font-weight: 500; color: white; text-shadow: 1px 1px 4px rgba(0,0,0,0.3);">
+                Gateway to Nature's Wonders
+            </p>
+            <p style="font-size: 1.1rem; margin-bottom: 40px; opacity: 0.95; max-width: 700px; margin-left: auto; margin-right: auto; line-height: 1.8; color: white; text-shadow: 1px 1px 4px rgba(0,0,0,0.3);">
+                We are a Tour and Travel Company Based in Jinja, Uganda. We specialize in creating tailor-made travel experiences for families, couples, groups, and corporate teams.
+            </p>
+            <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+                <a href="tours.html" style="background-color: #FF8F00; color: white; padding: 15px 40px; text-decoration: none; border-radius: 50px; font-weight: 600; font-size: 1.1rem; transition: all 0.3s ease; display: inline-block; box-shadow: 0 4px 15px rgba(255, 143, 0, 0.5);">
+                    Explore Tours
+                </a>
+                <a href="contact.html" style="background-color: transparent; color: white; padding: 15px 40px; text-decoration: none; border: 2px solid white; border-radius: 50px; font-weight: 600; font-size: 1.1rem; transition: all 0.3s ease; display: inline-block;">
+                    Contact Us
+                </a>
+            </div>
+        </div>
+        
+        <!-- Slider Indicators -->
+        <div style="position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); z-index: 3; display: flex; gap: 10px;">
+            <span class="slider-dot active" onclick="currentSlide(0)" style="width: 12px; height: 12px; border-radius: 50%; background-color: white; cursor: pointer; opacity: 0.7; transition: opacity 0.3s ease;"></span>
+            <span class="slider-dot" onclick="currentSlide(1)" style="width: 12px; height: 12px; border-radius: 50%; background-color: white; cursor: pointer; opacity: 0.4; transition: opacity 0.3s ease;"></span>
+            <span class="slider-dot" onclick="currentSlide(2)" style="width: 12px; height: 12px; border-radius: 50%; background-color: white; cursor: pointer; opacity: 0.4; transition: opacity 0.3s ease;"></span>
+            <span class="slider-dot" onclick="currentSlide(3)" style="width: 12px; height: 12px; border-radius: 50%; background-color: white; cursor: pointer; opacity: 0.4; transition: opacity 0.3s ease;"></span>
+            <span class="slider-dot" onclick="currentSlide(4)" style="width: 12px; height: 12px; border-radius: 50%; background-color: white; cursor: pointer; opacity: 0.4; transition: opacity 0.3s ease;"></span>
+        </div>
+    </section>
+
+    <!-- Services Overview Section -->
+    <section style="padding: 80px 20px; background-color: white;">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 20px; color: #4E342E; font-weight: 700;">
+                Our Services
+            </h2>
+            <p style="text-align: center; color: #666; font-size: 1.1rem; margin-bottom: 60px; max-width: 700px; margin-left: auto; margin-right: auto;">
+                Discover a wide range of travel services tailored to create unforgettable experiences in Uganda
+            </p>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-bottom: 40px;">
+                <div style="text-align: center; padding: 0; border-radius: 15px; background: white; transition: transform 0.3s ease; box-shadow: 0 2px 10px rgba(0,0,0,0.08); border-top: 3px solid #FF8F00; overflow: hidden;">
+                    <div style="height: 200px; background-image: url('images/group.jpeg'); background-size: cover; background-position: center;"></div>
+                    <div style="padding: 30px;">
+                        <div style="margin-bottom: 20px; display: flex; justify-content: center;">
+                            <i data-feather="users" style="width: 48px; height: 48px; stroke: #4E342E; stroke-width: 2;"></i>
+                        </div>
+                        <h3 style="color: #4E342E; margin-bottom: 15px; font-size: 1.5rem; font-weight: 600;">Customised Family & Group Tours</h3>
+                        <p style="color: #666; line-height: 1.6;">Tailor-made travel experiences designed for families and groups of all sizes.</p>
+                    </div>
+                </div>
+                <div style="text-align: center; padding: 0; border-radius: 15px; background: white; transition: transform 0.3s ease; box-shadow: 0 2px 10px rgba(0,0,0,0.08); border-top: 3px solid #FF8F00; overflow: hidden;">
+                    <div style="height: 200px; background-image: url('images/couple.jpeg'); background-size: cover; background-position: center;"></div>
+                    <div style="padding: 30px;">
+                        <div style="margin-bottom: 20px; display: flex; justify-content: center;">
+                            <i data-feather="heart" style="width: 48px; height: 48px; stroke: #4E342E; stroke-width: 2;"></i>
+                        </div>
+                        <h3 style="color: #4E342E; margin-bottom: 15px; font-size: 1.5rem; font-weight: 600;">Honeymoon & Couple Trips</h3>
+                        <p style="color: #666; line-height: 1.6;">Romantic getaways and intimate experiences for couples celebrating special moments.</p>
+                    </div>
+                </div>
+                <div style="text-align: center; padding: 0; border-radius: 15px; background: white; transition: transform 0.3s ease; box-shadow: 0 2px 10px rgba(0,0,0,0.08); border-top: 3px solid #FF8F00; overflow: hidden;">
+                    <div style="height: 200px; background-image: url('images/tourandguide.jpeg'); background-size: cover; background-position: center;"></div>
+                    <div style="padding: 30px;">
+                        <div style="margin-bottom: 20px; display: flex; justify-content: center;">
+                            <i data-feather="compass" style="width: 48px; height: 48px; stroke: #4E342E; stroke-width: 2;"></i>
+                        </div>
+                        <h3 style="color: #4E342E; margin-bottom: 15px; font-size: 1.5rem; font-weight: 600;">Guided Tours & Safaris</h3>
+                        <p style="color: #666; line-height: 1.6;">Professional guided tours and safaris to Uganda's most spectacular destinations.</p>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="services.html" style="background-color: #FF8F00; color: white; padding: 15px 40px; text-decoration: none; border-radius: 50px; font-weight: 600; font-size: 1.1rem; transition: all 0.3s ease; display: inline-block; box-shadow: 0 4px 15px rgba(255, 143, 0, 0.5);">
+                    View All Services
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Tours Preview -->
+    <section style="padding: 80px 20px; background: linear-gradient(135deg, #fafafa 0%, #f5f5f5 100%);">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 20px; color: #4E342E; font-weight: 700;">
+                Featured Adventures
+            </h2>
+            <p style="text-align: center; color: #666; font-size: 1.1rem; margin-bottom: 60px; max-width: 700px; margin-left: auto; margin-right: auto;">
+                Experience the best of Uganda with our most popular adventure tours
+            </p>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; margin-bottom: 40px;">
+                <div style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.12); transition: transform 0.3s ease; border-top: 4px solid #03A9F4;">
+                    <div style="height: 250px; background: linear-gradient(135deg, #4E342E 0%, #6D4C41 50%, #FF8F00 100%); background-image: url('images/atsource.jpeg'); background-size: cover; background-position: center; background-blend-mode: overlay; position: relative;">
+                        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(135deg, rgba(78, 52, 46, 0.7) 0%, rgba(109, 76, 65, 0.6) 50%, rgba(255, 143, 0, 0.5) 100%);"></div>
+                    </div>
+                    <div style="padding: 30px;">
+                        <h3 style="color: #4E342E; margin-bottom: 15px; font-size: 1.8rem; font-weight: 600;">Jinja Tours & Adventure</h3>
+                        <p style="color: #666; line-height: 1.8; margin-bottom: 20px;">
+                            Experience the adventure capital of East Africa! From white water rafting on the Nile to bungee jumping and kayaking.
+                        </p>
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <span style="color: #FF8F00; font-weight: 700; font-size: 1.3rem;">Custom Packages</span>
+                            <a href="tours.html" style="color: #4E342E; text-decoration: none; font-weight: 600; display: flex; align-items: center; gap: 5px;">Learn More <i data-feather="arrow-right" style="width: 16px; height: 16px; stroke: #4E342E;"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.12); transition: transform 0.3s ease; border-top: 4px solid #FFC107;">
+                    <div style="height: 250px; background: linear-gradient(135deg, #4E342E 0%, #FF8F00 50%, #FFC107 100%); background-image: url('images/falls.jpeg'); background-size: cover; background-position: center; background-blend-mode: overlay; position: relative;">
+                        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(135deg, rgba(78, 52, 46, 0.7) 0%, rgba(255, 143, 0, 0.6) 50%, rgba(255, 193, 7, 0.5) 100%);"></div>
+                    </div>
+                    <div style="padding: 30px;">
+                        <h3 style="color: #4E342E; margin-bottom: 15px; font-size: 1.8rem; font-weight: 600;">Sipi Falls Hiking & Adventure</h3>
+                        <p style="color: #666; line-height: 1.8; margin-bottom: 20px;">
+                            Discover the stunning Sipi Falls with guided hiking tours. Experience breathtaking waterfalls and panoramic mountain views.
+                        </p>
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <span style="color: #FF8F00; font-weight: 700; font-size: 1.3rem;">Custom Packages</span>
+                            <a href="tours.html" style="color: #4E342E; text-decoration: none; font-weight: 600; display: flex; align-items: center; gap: 5px;">Learn More <i data-feather="arrow-right" style="width: 16px; height: 16px; stroke: #4E342E;"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="tours.html" style="background-color: #FF8F00; color: white; padding: 15px 40px; text-decoration: none; border-radius: 50px; font-weight: 600; font-size: 1.1rem; transition: all 0.3s ease; display: inline-block; box-shadow: 0 4px 15px rgba(255, 143, 0, 0.5);">
+                    View All Tours
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section style="padding: 80px 20px; background: linear-gradient(135deg, #4E342E 0%, #6D4C41 50%, #4E342E 100%); color: white; text-align: center;">
+        <div style="max-width: 800px; margin: 0 auto;">
+            <h2 style="font-size: 2.5rem; margin-bottom: 20px; font-weight: 700;">
+                Ready to Start Your Adventure?
+            </h2>
+            <p style="font-size: 1.2rem; margin-bottom: 40px; opacity: 0.9;">
+                Get in touch with us today and let's plan your perfect Uganda experience.
+            </p>
+            <a href="contact.html" style="background-color: #FF8F00; color: white; padding: 15px 50px; text-decoration: none; border-radius: 50px; font-weight: 600; font-size: 1.1rem; transition: all 0.3s ease; display: inline-block; box-shadow: 0 4px 15px rgba(255, 143, 0, 0.5);">
+                Contact Us Now
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <style>
+        * {
+            font-family: Cambria, 'Hoefler Text', Utopia, 'Liberation Serif', 'Nimbus Roman No9 L Regular', Times, 'Times New Roman', serif !important;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        a:hover {
+            transform: translateY(-2px);
+        }
+        
+        .slider-dot:hover {
+            opacity: 1 !important;
+        }
+        
+        section div[style*="border-top: 3px solid"]:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(78, 52, 46, 0.15) !important;
+        }
+        
+        section div[style*="border-top: 4px solid"]:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2) !important;
+        }
+        
+        /* Tablet Styles */
+        @media (max-width: 1024px) {
+            section[style*="min-height: 100vh"] {
+                min-height: 85vh !important;
+            }
+            section[style*="padding: 120px 20px"] {
+                padding: 100px 20px !important;
+            }
+        }
+        
+        /* Mobile Styles */
+        @media (max-width: 768px) {
+            section h1 { 
+                font-size: 2rem !important; 
+                line-height: 1.2 !important;
+                margin-bottom: 15px !important;
+            }
+            section h2 { 
+                font-size: 1.75rem !important; 
+                margin-bottom: 30px !important;
+            }
+            section h3 {
+                font-size: 1.3rem !important;
+            }
+            section[style*="min-height: 100vh"] {
+                min-height: 70vh !important;
+            }
+            section[style*="padding: 120px 20px"] {
+                padding: 60px 20px !important;
+            }
+            section[style*="padding: 80px 20px"] {
+                padding: 50px 20px !important;
+            }
+            div[style*="grid-template-columns: repeat(auto-fit"] {
+                grid-template-columns: 1fr !important;
+            }
+            div[style*="grid-template-columns: repeat(auto-fit, minmax(280px"] {
+                grid-template-columns: 1fr !important;
+            }
+            div[style*="grid-template-columns: repeat(auto-fit, minmax(300px"] {
+                grid-template-columns: 1fr !important;
+            }
+            div[style*="grid-template-columns: repeat(auto-fit, minmax(350px"] {
+                grid-template-columns: 1fr !important;
+            }
+            div[style*="display: flex; gap: 20px"] {
+                flex-direction: column !important;
+                gap: 15px !important;
+            }
+            a[style*="padding: 15px 40px"] {
+                padding: 12px 30px !important;
+                font-size: 1rem !important;
+            }
+            p[style*="font-size: 1.5rem"] {
+                font-size: 1.2rem !important;
+            }
+            p[style*="font-size: 1.1rem"] {
+                font-size: 1rem !important;
+            }
+            div[style*="font-size: 2.5rem"] {
+                font-size: 2rem !important;
+            }
+            div[style*="height: 250px"] {
+                height: 200px !important;
+            }
+            div[style*="height: 200px"] {
+                height: 180px !important;
+            }
+        }
+        
+        /* Small Mobile Styles */
+        @media (max-width: 480px) {
+            section h1 { 
+                font-size: 1.75rem !important;
+            }
+            section h2 { 
+                font-size: 1.5rem !important;
+            }
+            section[style*="padding: 120px 20px"] {
+                padding: 50px 15px !important;
+            }
+            section[style*="padding: 80px 20px"] {
+                padding: 40px 15px !important;
+            }
+            a[style*="padding: 15px 40px"] {
+                padding: 10px 25px !important;
+                font-size: 0.9rem !important;
+            }
+            div[style*="gap: 30px"] {
+                gap: 20px !important;
+            }
+            div[style*="gap: 40px"] {
+                gap: 25px !important;
+            }
+        }
+    </style>
+</body>
+</html>
