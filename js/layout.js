@@ -44,7 +44,10 @@
         if (!placeholder) return;
         fetch('footer.html')
             .then(function(response) { return response.text(); })
-            .then(function(html) { placeholder.innerHTML = html; })
+            .then(function(html) {
+                placeholder.innerHTML = html;
+                if (typeof feather !== 'undefined') feather.replace();
+            })
             .catch(function(err) { console.error('Error loading footer:', err); });
     }
 
