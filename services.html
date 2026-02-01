@@ -4,43 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Our Services - Atlas Uganda Explorers</title>
-    <script src="https://unpkg.com/feather-icons"></script>
-    <script>
-        window.addEventListener('DOMContentLoaded', function() {
-            let headerLoaded = false;
-            let footerLoaded = false;
-            
-            function initializeIcons() {
-                if (headerLoaded && footerLoaded) {
-                    feather.replace();
-                }
-            }
-            
-            fetch('header.html')
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById('header-placeholder').innerHTML = data;
-                    headerLoaded = true;
-                    initializeIcons();
-                })
-                .catch(err => console.error('Error loading header:', err));
-            
-            fetch('footer.html')
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById('footer-placeholder').innerHTML = data;
-                    footerLoaded = true;
-                    initializeIcons();
-                })
-                .catch(err => console.error('Error loading footer:', err));
-            
-            setTimeout(function() {
-                feather.replace();
-            }, 100);
-        });
-    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="js/layout.js"></script>
 </head>
-<body style="margin: 0; padding: 0; font-family: Cambria, 'Hoefler Text', Utopia, 'Liberation Serif', 'Nimbus Roman No9 L Regular', Times, 'Times New Roman', serif; background-color: #f5f5f5;">
+<body style="margin: 0; padding: 0; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; background-color: #f5f5f5;">
     <div id="header-placeholder"></div>
 
     <!-- Page Header -->
@@ -63,7 +33,7 @@
                     <div style="height: 220px; background-image: url('images/group.jpeg'); background-size: cover; background-position: center;"></div>
                     <div style="padding: 40px 30px;">
                         <div style="margin-bottom: 25px; display: flex; justify-content: center;">
-                            <i data-feather="users" style="width: 64px; height: 64px; stroke: #4E342E; stroke-width: 2;"></i>
+                            <i class="fa-solid fa-users" style="font-size: 64px; color: #4E342E;"></i>
                         </div>
                         <h3 style="color: #4E342E; margin-bottom: 15px; font-size: 1.6rem; font-weight: 600;">Customised Family & Group Tours</h3>
                     <p style="color: #666; line-height: 1.7; margin-bottom: 20px;">
@@ -76,7 +46,7 @@
                     <div style="height: 220px; background-image: url('images/couple.jpeg'); background-size: cover; background-position: center;"></div>
                     <div style="padding: 40px 30px;">
                         <div style="margin-bottom: 25px; display: flex; justify-content: center;">
-                            <i data-feather="heart" style="width: 64px; height: 64px; stroke: #4E342E; stroke-width: 2;"></i>
+                            <i class="fa-solid fa-heart" style="font-size: 64px; color: #4E342E;"></i>
                         </div>
                         <h3 style="color: #4E342E; margin-bottom: 15px; font-size: 1.6rem; font-weight: 600;">Honeymoon & Couple Trips</h3>
                     <p style="color: #666; line-height: 1.7; margin-bottom: 20px;">
@@ -89,7 +59,7 @@
                     <div style="height: 220px; background-image: url('images/image1.jpeg'); background-size: cover; background-position: center;"></div>
                     <div style="padding: 40px 30px;">
                         <div style="margin-bottom: 25px; display: flex; justify-content: center;">
-                            <i data-feather="home" style="width: 64px; height: 64px; stroke: #4E342E; stroke-width: 2;"></i>
+                            <i class="fa-solid fa-house" style="font-size: 64px; color: #4E342E;"></i>
                         </div>
                         <h3 style="color: #4E342E; margin-bottom: 15px; font-size: 1.6rem; font-weight: 600;">Hotel Booking & Reservations</h3>
                     <p style="color: #666; line-height: 1.7; margin-bottom: 20px;">
@@ -102,7 +72,7 @@
                     <div style="height: 220px; background-image: url('images/onboat.jpeg'); background-size: cover; background-position: center;"></div>
                     <div style="padding: 40px 30px;">
                         <div style="margin-bottom: 25px; display: flex; justify-content: center;">
-                            <i data-feather="map-pin" style="width: 64px; height: 64px; stroke: #4E342E; stroke-width: 2;"></i>
+                            <i class="fa-solid fa-location-dot" style="font-size: 64px; color: #4E342E;"></i>
                         </div>
                         <h3 style="color: #4E342E; margin-bottom: 15px; font-size: 1.6rem; font-weight: 600;">Jinja Tours & Adventure</h3>
                     <p style="color: #666; line-height: 1.7; margin-bottom: 20px;">
@@ -115,7 +85,7 @@
                     <div style="height: 220px; background-image: url('images/falls.jpeg'); background-size: cover; background-position: center;"></div>
                     <div style="padding: 40px 30px;">
                         <div style="margin-bottom: 25px; display: flex; justify-content: center;">
-                            <i data-feather="mountain" style="width: 64px; height: 64px; stroke: #4E342E; stroke-width: 2;"></i>
+                            <i class="fa-solid fa-mountain-sun" style="font-size: 64px; color: #4E342E;"></i>
                         </div>
                         <h3 style="color: #4E342E; margin-bottom: 15px; font-size: 1.6rem; font-weight: 600;">Sipi Falls Hiking & Adventure</h3>
                     <p style="color: #666; line-height: 1.7; margin-bottom: 20px;">
@@ -128,7 +98,7 @@
                     <div style="height: 220px; background-image: url('images/falls2.jpeg'); background-size: cover; background-position: center;"></div>
                     <div style="padding: 40px 30px;">
                         <div style="margin-bottom: 25px; display: flex; justify-content: center;">
-                            <i data-feather="trending-up" style="width: 64px; height: 64px; stroke: #4E342E; stroke-width: 2;"></i>
+                            <i class="fa-solid fa-arrow-trending-up" style="font-size: 64px; color: #4E342E;"></i>
                         </div>
                         <h3 style="color: #4E342E; margin-bottom: 15px; font-size: 1.6rem; font-weight: 600;">Mount Elgon Hiking & Adventure</h3>
                     <p style="color: #666; line-height: 1.7; margin-bottom: 20px;">
@@ -141,7 +111,7 @@
                     <div style="height: 220px; background-image: url('images/tourandguide.jpeg'); background-size: cover; background-position: center;"></div>
                     <div style="padding: 40px 30px;">
                         <div style="margin-bottom: 25px; display: flex; justify-content: center;">
-                            <i data-feather="compass" style="width: 64px; height: 64px; stroke: #4E342E; stroke-width: 2;"></i>
+                            <i class="fa-solid fa-compass" style="font-size: 64px; color: #4E342E;"></i>
                         </div>
                         <h3 style="color: #4E342E; margin-bottom: 15px; font-size: 1.6rem; font-weight: 600;">Guided Tours & Safaris</h3>
                     <p style="color: #666; line-height: 1.7; margin-bottom: 20px;">
@@ -154,7 +124,7 @@
                     <div style="height: 220px; background-image: url('images/whiteboat.jpeg'); background-size: cover; background-position: center;"></div>
                     <div style="padding: 40px 30px;">
                         <div style="margin-bottom: 25px; display: flex; justify-content: center;">
-                            <i data-feather="plane" style="width: 64px; height: 64px; stroke: #4E342E; stroke-width: 2;"></i>
+                            <i class="fa-solid fa-plane" style="font-size: 64px; color: #4E342E;"></i>
                         </div>
                         <h3 style="color: #4E342E; margin-bottom: 15px; font-size: 1.6rem; font-weight: 600;">Airport Meet & Greet</h3>
                     <p style="color: #666; line-height: 1.7; margin-bottom: 20px;">
@@ -167,7 +137,7 @@
                     <div style="height: 220px; background-image: url('images/whitegroup.jpeg'); background-size: cover; background-position: center;"></div>
                     <div style="padding: 40px 30px;">
                         <div style="margin-bottom: 25px; display: flex; justify-content: center;">
-                            <i data-feather="briefcase" style="width: 64px; height: 64px; stroke: #4E342E; stroke-width: 2;"></i>
+                            <i class="fa-solid fa-briefcase" style="font-size: 64px; color: #4E342E;"></i>
                         </div>
                         <h3 style="color: #4E342E; margin-bottom: 15px; font-size: 1.6rem; font-weight: 600;">Corporate Team Building</h3>
                     <p style="color: #666; line-height: 1.7; margin-bottom: 20px;">
@@ -198,7 +168,10 @@
 
     <style>
         * {
-            font-family: Cambria, 'Hoefler Text', Utopia, 'Liberation Serif', 'Nimbus Roman No9 L Regular', Times, 'Times New Roman', serif !important;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', Georgia, serif !important;
         }
         
         section div[style*="border-top: 4px solid"]:hover {

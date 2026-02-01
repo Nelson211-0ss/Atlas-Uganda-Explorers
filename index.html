@@ -4,45 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Atlas Uganda Explorers - Gateway to Nature's Wonders</title>
-    <script src="https://unpkg.com/feather-icons"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="js/layout.js"></script>
     <script>
-        // Load header and footer automatically
-        window.addEventListener('DOMContentLoaded', function() {
-            let headerLoaded = false;
-            let footerLoaded = false;
-            
-            function initializeIcons() {
-                if (headerLoaded && footerLoaded) {
-                    feather.replace();
-                }
-            }
-            
-            // Load header
-            fetch('header.html')
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById('header-placeholder').innerHTML = data;
-                    headerLoaded = true;
-                    initializeIcons();
-                })
-                .catch(err => console.error('Error loading header:', err));
-            
-            // Load footer
-            fetch('footer.html')
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById('footer-placeholder').innerHTML = data;
-                    footerLoaded = true;
-                    initializeIcons();
-                })
-                .catch(err => console.error('Error loading footer:', err));
-            
-            // Initialize Feather icons for main content
-            setTimeout(function() {
-                feather.replace();
-            }, 100);
-        });
-        
         // Image Slider Functionality
         let currentSlideIndex = 0;
         let slides = [];
@@ -90,7 +57,7 @@
         });
     </script>
 </head>
-<body style="margin: 0; padding: 0; font-family: Cambria, 'Hoefler Text', Utopia, 'Liberation Serif', 'Nimbus Roman No9 L Regular', Times, 'Times New Roman', serif; background-color: #f5f5f5;">
+<body style="margin: 0; padding: 0; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; background-color: #f5f5f5;">
     <!-- Header placeholder -->
     <div id="header-placeholder"></div>
 
@@ -153,7 +120,7 @@
                     <div style="height: 200px; background-image: url('images/group.jpeg'); background-size: cover; background-position: center;"></div>
                     <div style="padding: 30px;">
                         <div style="margin-bottom: 20px; display: flex; justify-content: center;">
-                            <i data-feather="users" style="width: 48px; height: 48px; stroke: #4E342E; stroke-width: 2;"></i>
+                            <i class="fa-solid fa-users" style="font-size: 48px; color: #4E342E;"></i>
                         </div>
                         <h3 style="color: #4E342E; margin-bottom: 15px; font-size: 1.5rem; font-weight: 600;">Customised Family & Group Tours</h3>
                         <p style="color: #666; line-height: 1.6;">Tailor-made travel experiences designed for families and groups of all sizes.</p>
@@ -163,7 +130,7 @@
                     <div style="height: 200px; background-image: url('images/couple.jpeg'); background-size: cover; background-position: center;"></div>
                     <div style="padding: 30px;">
                         <div style="margin-bottom: 20px; display: flex; justify-content: center;">
-                            <i data-feather="heart" style="width: 48px; height: 48px; stroke: #4E342E; stroke-width: 2;"></i>
+                            <i class="fa-solid fa-heart" style="font-size: 48px; color: #4E342E;"></i>
                         </div>
                         <h3 style="color: #4E342E; margin-bottom: 15px; font-size: 1.5rem; font-weight: 600;">Honeymoon & Couple Trips</h3>
                         <p style="color: #666; line-height: 1.6;">Romantic getaways and intimate experiences for couples celebrating special moments.</p>
@@ -173,7 +140,7 @@
                     <div style="height: 200px; background-image: url('images/tourandguide.jpeg'); background-size: cover; background-position: center;"></div>
                     <div style="padding: 30px;">
                         <div style="margin-bottom: 20px; display: flex; justify-content: center;">
-                            <i data-feather="compass" style="width: 48px; height: 48px; stroke: #4E342E; stroke-width: 2;"></i>
+                            <i class="fa-solid fa-compass" style="font-size: 48px; color: #4E342E;"></i>
                         </div>
                         <h3 style="color: #4E342E; margin-bottom: 15px; font-size: 1.5rem; font-weight: 600;">Guided Tours & Safaris</h3>
                         <p style="color: #666; line-height: 1.6;">Professional guided tours and safaris to Uganda's most spectacular destinations.</p>
@@ -209,7 +176,7 @@
                         </p>
                         <div style="display: flex; justify-content: space-between; align-items: center;">
                             <span style="color: #FF8F00; font-weight: 700; font-size: 1.3rem;">Custom Packages</span>
-                            <a href="tours.html" style="color: #4E342E; text-decoration: none; font-weight: 600; display: flex; align-items: center; gap: 5px;">Learn More <i data-feather="arrow-right" style="width: 16px; height: 16px; stroke: #4E342E;"></i></a>
+                            <a href="tours.html" style="color: #4E342E; text-decoration: none; font-weight: 600; display: flex; align-items: center; gap: 5px;">Learn More <i class="fa-solid fa-arrow-right" style="font-size: 16px; color: #4E342E;"></i></a>
                         </div>
                     </div>
                 </div>
@@ -224,7 +191,7 @@
                         </p>
                         <div style="display: flex; justify-content: space-between; align-items: center;">
                             <span style="color: #FF8F00; font-weight: 700; font-size: 1.3rem;">Custom Packages</span>
-                            <a href="tours.html" style="color: #4E342E; text-decoration: none; font-weight: 600; display: flex; align-items: center; gap: 5px;">Learn More <i data-feather="arrow-right" style="width: 16px; height: 16px; stroke: #4E342E;"></i></a>
+                            <a href="tours.html" style="color: #4E342E; text-decoration: none; font-weight: 600; display: flex; align-items: center; gap: 5px;">Learn More <i class="fa-solid fa-arrow-right" style="font-size: 16px; color: #4E342E;"></i></a>
                         </div>
                     </div>
                 </div>
@@ -233,6 +200,39 @@
                 <a href="tours.html" style="background-color: #FF8F00; color: white; padding: 15px 40px; text-decoration: none; border-radius: 50px; font-weight: 600; font-size: 1.1rem; transition: all 0.3s ease; display: inline-block; box-shadow: 0 4px 15px rgba(255, 143, 0, 0.5);">
                     View All Tours
                 </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Jinja Cultural Heritage Tour -->
+    <section class="heritage-section" style="padding: 80px 20px; background-color: white;">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 20px; color: #4E342E; font-weight: 700;">
+                Jinja Cultural Heritage Tour
+            </h2>
+            <p style="text-align: center; color: #666; font-size: 1.1rem; margin-bottom: 48px; max-width: 720px; margin-left: auto; margin-right: auto;">
+                Explore Busoga Royal Kingdom's Palace, Jinja local market, craft shops, cultural research centre & museum, Mabira Forest community walk, Sacred Kagulu Rock of Busoga Kingdom, Jinja Railway Museum, and local community tour experiences.
+            </p>
+            <div class="heritage-card" style="display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; background: linear-gradient(135deg, #fafafa 0%, #f5f5f5 100%); border-radius: 20px; overflow: hidden; box-shadow: 0 8px 30px rgba(0,0,0,0.08); max-width: 1000px; margin: 0 auto;">
+                <div class="heritage-image-wrap" style="position: relative; height: 320px; min-height: 280px;">
+                    <img src="images/tourandguide.jpeg" alt="Jinja Cultural Heritage Tour – Busoga Kingdom and local experiences" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                    <span style="position: absolute; bottom: 12px; left: 50%; transform: translateX(-50%); padding: 6px 14px; background: rgba(78, 52, 46, 0.9); color: rgba(255,255,255,0.95); font-size: 0.85rem; border-radius: 20px; white-space: nowrap;">Photo coming soon</span>
+                </div>
+                <div style="padding: 40px 36px 40px 0;">
+                    <h3 style="color: #4E342E; margin-bottom: 20px; font-size: 1.5rem; font-weight: 600;">What you'll experience</h3>
+                    <ul class="heritage-highlights" style="list-style: none; padding: 0; margin: 0; color: #555; line-height: 1.9; font-size: 1.05rem;">
+                        <li><i class="fa-solid fa-landmark" style="color: #FF8F00; margin-right: 10px; width: 20px;"></i> Busoga Royal Kingdom's Palace</li>
+                        <li><i class="fa-solid fa-store" style="color: #FF8F00; margin-right: 10px; width: 20px;"></i> Jinja local market & craft shops</li>
+                        <li><i class="fa-solid fa-building-columns" style="color: #FF8F00; margin-right: 10px; width: 20px;"></i> Cultural research centre & museum</li>
+                        <li><i class="fa-solid fa-tree" style="color: #FF8F00; margin-right: 10px; width: 20px;"></i> Mabira Forest community walk</li>
+                        <li><i class="fa-solid fa-mountain-sun" style="color: #FF8F00; margin-right: 10px; width: 20px;"></i> Sacred Kagulu Rock of Busoga Kingdom</li>
+                        <li><i class="fa-solid fa-train" style="color: #FF8F00; margin-right: 10px; width: 20px;"></i> Jinja Railway Museum</li>
+                        <li><i class="fa-solid fa-people-group" style="color: #FF8F00; margin-right: 10px; width: 20px;"></i> Local community tour experience</li>
+                    </ul>
+                    <a href="contact.html" style="display: inline-block; margin-top: 24px; background-color: #FF8F00; color: white; padding: 12px 28px; text-decoration: none; border-radius: 50px; font-weight: 600; font-size: 1rem; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(255, 143, 0, 0.4);">
+                        Enquire about this tour
+                    </a>
+                </div>
             </div>
         </div>
     </section>
@@ -257,7 +257,10 @@
 
     <style>
         * {
-            font-family: Cambria, 'Hoefler Text', Utopia, 'Liberation Serif', 'Nimbus Roman No9 L Regular', Times, 'Times New Roman', serif !important;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', Georgia, serif !important;
         }
         
         @keyframes fadeIn {
@@ -327,6 +330,17 @@
             }
             div[style*="grid-template-columns: repeat(auto-fit, minmax(350px"] {
                 grid-template-columns: 1fr !important;
+            }
+            .heritage-card {
+                grid-template-columns: 1fr !important;
+                gap: 0 !important;
+            }
+            .heritage-image-wrap {
+                height: 260px !important;
+                min-height: 220px !important;
+            }
+            .heritage-section div[style*="padding: 40px 36px"] {
+                padding: 32px 24px 40px !important;
             }
             div[style*="display: flex; gap: 20px"] {
                 flex-direction: column !important;

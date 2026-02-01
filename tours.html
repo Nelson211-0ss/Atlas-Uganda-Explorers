@@ -4,235 +4,331 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Featured Tours & Adventures - Atlas Uganda Explorers</title>
-    <script src="https://unpkg.com/feather-icons"></script>
-    <script>
-        window.addEventListener('DOMContentLoaded', function() {
-            let headerLoaded = false;
-            let footerLoaded = false;
-            
-            function initializeIcons() {
-                if (headerLoaded && footerLoaded) {
-                    feather.replace();
-                }
-            }
-            
-            fetch('header.html')
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById('header-placeholder').innerHTML = data;
-                    headerLoaded = true;
-                    initializeIcons();
-                })
-                .catch(err => console.error('Error loading header:', err));
-            
-            fetch('footer.html')
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById('footer-placeholder').innerHTML = data;
-                    footerLoaded = true;
-                    initializeIcons();
-                })
-                .catch(err => console.error('Error loading footer:', err));
-            
-            setTimeout(function() {
-                feather.replace();
-            }, 100);
-        });
-    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="js/layout.js"></script>
+    <style>
+        .tours-page * { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; }
+        .tours-page h1, .tours-page h2, .tours-page h3 { font-family: 'Playfair Display', Georgia, serif !important; }
+        .tours-page a:hover { transform: translateY(-2px); }
+    </style>
 </head>
-<body style="margin: 0; padding: 0; font-family: Cambria, 'Hoefler Text', Utopia, 'Liberation Serif', 'Nimbus Roman No9 L Regular', Times, 'Times New Roman', serif; background-color: #f5f5f5;">
+<body class="tours-page" style="margin: 0; padding: 0; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; background-color: #f8f8f8;">
     <div id="header-placeholder"></div>
 
-    <!-- Page Header -->
-    <section style="background: linear-gradient(135deg, #4E342E 0%, #6D4C41 40%, #FF8F00 80%, #FFC107 100%); color: white; padding: 100px 20px 80px; text-align: center;">
-        <div style="max-width: 1200px; margin: 0 auto;">
-            <h1 style="font-size: 3rem; margin-bottom: 20px; font-weight: 700; text-shadow: 2px 2px 8px rgba(0,0,0,0.4);">
-                Featured Tours & Adventures
-            </h1>
-            <p style="font-size: 1.2rem; opacity: 0.95; max-width: 700px; margin: 0 auto;">
-                Discover Uganda's most spectacular destinations with our expertly crafted adventure tours
-            </p>
+    <!-- Hero with background image -->
+    <section class="tours-hero">
+        <div class="tours-hero-overlay"></div>
+        <div class="tours-hero-content">
+            <h1 class="tours-hero-title">Featured Tours & Adventures</h1>
+            <p class="tours-hero-subtitle">Discover Uganda's most spectacular destinations with our expertly crafted adventure tours</p>
         </div>
     </section>
 
-    <!-- Tours Section -->
-    <section style="padding: 80px 20px; background-color: white;">
-        <div style="max-width: 1200px; margin: 0 auto;">
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px;">
-                <!-- Jinja Tours -->
-                <div style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.12); transition: transform 0.3s ease; border-top: 4px solid #03A9F4;">
-                    <div style="height: 280px; background-image: url('images/atsource.jpeg'); background-size: cover; background-position: center; position: relative;">
-                        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(135deg, rgba(78, 52, 46, 0.6) 0%, rgba(109, 76, 65, 0.5) 50%, rgba(255, 143, 0, 0.4) 100%);"></div>
-                    </div>
-                    <div style="padding: 35px;">
-                        <h3 style="color: #4E342E; margin-bottom: 15px; font-size: 1.8rem; font-weight: 600;">Jinja Tours & Adventure</h3>
-                        <p style="color: #666; line-height: 1.8; margin-bottom: 25px;">
-                            Experience the adventure capital of East Africa! From white water rafting on the Nile to bungee jumping and kayaking, Jinja offers unforgettable thrills. Explore the source of the Nile, visit local communities, and enjoy thrilling water sports.
-                        </p>
-                        <div style="margin-bottom: 25px;">
-                            <h4 style="color: #4E342E; margin-bottom: 10px; font-size: 1.1rem; font-weight: 600;">Highlights:</h4>
-                            <ul style="color: #666; line-height: 2; padding-left: 20px;">
-                                <li>White water rafting on the Nile</li>
-                                <li>Bungee jumping</li>
-                                <li>Kayaking and water sports</li>
-                                <li>Source of the Nile visit</li>
-                                <li>Local community tours</li>
-                            </ul>
-                        </div>
-                        <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 20px; border-top: 2px solid #f0f0f0;">
-                            <span style="color: #FF8F00; font-weight: 700; font-size: 1.3rem;">Custom Packages</span>
-                            <a href="contact.html" style="background-color: #FF8F00; color: white; padding: 10px 25px; text-decoration: none; border-radius: 25px; font-weight: 600; transition: all 0.3s ease; display: inline-block;">
-                                Book Now
-                            </a>
-                        </div>
-                    </div>
+    <!-- Tour activities in Jinja City -->
+    <section class="tours-section tours-section--alt">
+        <div class="tours-container">
+            <div class="tours-split">
+                <div class="tours-split-image">
+                    <img src="images/onboat.jpeg" alt="Adventure activities in Jinja City – boat and water activities">
                 </div>
-
-                <!-- Sipi Falls -->
-                <div style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.12); transition: transform 0.3s ease; border-top: 4px solid #FFC107;">
-                    <div style="height: 280px; background-image: url('images/falls2.jpeg'); background-size: cover; background-position: center; position: relative;">
-                        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(135deg, rgba(78, 52, 46, 0.6) 0%, rgba(255, 143, 0, 0.5) 50%, rgba(255, 193, 7, 0.4) 100%);"></div>
-                    </div>
-                    <div style="padding: 35px;">
-                        <h3 style="color: #4E342E; margin-bottom: 15px; font-size: 1.8rem; font-weight: 600;">Sipi Falls Hiking & Adventure</h3>
-                        <p style="color: #666; line-height: 1.8; margin-bottom: 25px;">
-                            Discover the stunning Sipi Falls with guided hiking tours. Experience breathtaking waterfalls, coffee plantations, and panoramic mountain views. Perfect for nature lovers and adventure seekers.
-                        </p>
-                        <div style="margin-bottom: 25px;">
-                            <h4 style="color: #4E342E; margin-bottom: 10px; font-size: 1.1rem; font-weight: 600;">Highlights:</h4>
-                            <ul style="color: #666; line-height: 2; padding-left: 20px;">
-                                <li>Three stunning waterfalls</li>
-                                <li>Guided hiking trails</li>
-                                <li>Coffee plantation tours</li>
-                                <li>Mountain climbing</li>
-                                <li>Cultural experiences</li>
-                            </ul>
-                        </div>
-                        <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 20px; border-top: 2px solid #f0f0f0;">
-                            <span style="color: #FF8F00; font-weight: 700; font-size: 1.3rem;">Custom Packages</span>
-                            <a href="contact.html" style="background-color: #FF8F00; color: white; padding: 10px 25px; text-decoration: none; border-radius: 25px; font-weight: 600; transition: all 0.3s ease; display: inline-block;">
-                                Book Now
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Mount Elgon -->
-                <div style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.12); transition: transform 0.3s ease; border-top: 4px solid #03A9F4;">
-                    <div style="height: 280px; background-image: url('images/falls.jpeg'); background-size: cover; background-position: center; position: relative;">
-                        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(135deg, rgba(3, 169, 244, 0.6) 0%, rgba(78, 52, 46, 0.7) 100%);"></div>
-                    </div>
-                    <div style="padding: 35px;">
-                        <h3 style="color: #4E342E; margin-bottom: 15px; font-size: 1.8rem; font-weight: 600;">Mount Elgon Hiking & Adventure</h3>
-                        <p style="color: #666; line-height: 1.8; margin-bottom: 25px;">
-                            Conquer Mount Elgon with our expert-guided hiking tours. Experience diverse wildlife, unique flora, and spectacular summit views. An unforgettable adventure for experienced hikers.
-                        </p>
-                        <div style="margin-bottom: 25px;">
-                            <h4 style="color: #4E342E; margin-bottom: 10px; font-size: 1.1rem; font-weight: 600;">Highlights:</h4>
-                            <ul style="color: #666; line-height: 2; padding-left: 20px;">
-                                <li>Summit hiking expeditions</li>
-                                <li>Wildlife viewing</li>
-                                <li>Unique flora discovery</li>
-                                <li>Expert guides</li>
-                                <li>Camping experiences</li>
-                            </ul>
-                        </div>
-                        <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 20px; border-top: 2px solid #f0f0f0;">
-                            <span style="color: #FF8F00; font-weight: 700; font-size: 1.3rem;">Custom Packages</span>
-                            <a href="contact.html" style="background-color: #FF8F00; color: white; padding: 10px 25px; text-decoration: none; border-radius: 25px; font-weight: 600; transition: all 0.3s ease; display: inline-block;">
-                                Book Now
-                            </a>
-                        </div>
-                    </div>
+                <div class="tours-split-content">
+                    <span class="tours-label">Jinja City</span>
+                    <h2 class="tours-heading">Tour Activities in Jinja City</h2>
+                    <p class="tours-text">Explore the vast range of adventure activities in Jinja City! Experience the adventure capital of East Africa! Enjoy bungee jump, white water rafting on the longest river in the world, ziplining on the shores of River Nile, Gogolo slide, water massage, tube massage, white water and flat water tubing, quad biking, horse riding, boat cruises on Lake Victoria and River Nile, sport fishing, kayaking, jetskiing, water slide, Samuka Island getaway in the middle of Lake Victoria, and more.</p>
+                    <a href="contact.html" class="tours-btn">Enquire about Jinja activities</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Call to Action -->
-    <section style="padding: 80px 20px; background: linear-gradient(135deg, #4E342E 0%, #6D4C41 50%, #4E342E 100%); color: white; text-align: center;">
-        <div style="max-width: 800px; margin: 0 auto;">
-            <h2 style="font-size: 2.5rem; margin-bottom: 20px; font-weight: 700;">
-                Customize Your Adventure
-            </h2>
-            <p style="font-size: 1.2rem; margin-bottom: 40px; opacity: 0.9;">
-                All our tours can be customized to fit your preferences, schedule, and budget. Contact us to create your perfect Uganda adventure!
-            </p>
-            <a href="contact.html" style="background-color: #FF8F00; color: white; padding: 15px 50px; text-decoration: none; border-radius: 50px; font-weight: 600; font-size: 1.1rem; transition: all 0.3s ease; display: inline-block; box-shadow: 0 4px 15px rgba(255, 143, 0, 0.5);">
-                Plan Your Tour
-            </a>
+    <!-- Wilderness Exploration -->
+    <section class="tours-section">
+        <div class="tours-container">
+            <div class="tours-split tours-split--reverse">
+                <div class="tours-split-image">
+                    <img src="images/atsource.jpeg" alt="Source of the Nile – Wilderness Exploration">
+                </div>
+                <div class="tours-split-content">
+                    <span class="tours-label">Wilderness</span>
+                    <h2 class="tours-heading">Wilderness Exploration</h2>
+                    <p class="tours-text">Explore the famous source of River Nile, the world's longest river! Visit the breath-taking Busowoko Falls, captivating Itanda Falls, and stunning Bujagali Falls. Enjoy a boat cruise on Lake Victoria to witness the magical phenomenon where the lake joins River Nile at zero point. Experience wildlife, birds, and the raw nature of the wilderness.</p>
+                    <a href="contact.html" class="tours-btn">Enquire about wilderness tours</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- White water rafting -->
+    <section class="tours-rafting">
+        <div class="tours-rafting-bg" style="background-image: url('images/whiteboat.jpeg');"></div>
+        <div class="tours-rafting-overlay"></div>
+        <div class="tours-container tours-rafting-inner">
+            <h2 class="tours-rafting-title">White Water Rafting</h2>
+            <p class="tours-rafting-desc">Amazing 4-hour white water rafting experience! From calm to chaos as we paddle to chase the breath-taking waterfalls on the longest river in the world.</p>
+            <div class="tours-rafting-includes">
+                <h3>Includes</h3>
+                <ul>
+                    <li>Breakfast</li>
+                    <li>Snacks</li>
+                    <li>Photography</li>
+                    <li>All transportation from and back to your hotel residence</li>
+                </ul>
+            </div>
+            <a href="contact.html" class="tours-btn tours-btn--light">Book White Water Rafting</a>
+        </div>
+    </section>
+
+    <!-- Sipi Falls Adventure Tour -->
+    <section class="tours-section tours-section--alt">
+        <div class="tours-container">
+            <div class="tours-split">
+                <div class="tours-split-image">
+                    <img src="images/falls2.jpeg" alt="Sipi Falls – Mount Elgon adventure">
+                </div>
+                <div class="tours-split-content">
+                    <span class="tours-label">Mount Elgon</span>
+                    <h2 class="tours-heading">Sipi Falls Adventure Tour</h2>
+                    <p class="tours-text">Dive in to explore the raw nature and beautiful scenery on the slopes of Mount Elgon. Visit the three waterfalls of Sipi and enjoy hiking, coffee tour, the high-altitude training centre of Uganda's gold medalist Stephen Kiprotich, cave adventure, and the King's Viewpoint for a stunning view of the Karamoja plains. Experience amazing abseiling on the highest waterfall and explore the dramatic mountainous nature of Kapchorwa.</p>
+                    <a href="contact.html" class="tours-btn">Enquire about Sipi Falls Tour</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tour cards -->
+    <section class="tours-section tours-cards-section">
+        <div class="tours-container">
+            <h2 class="tours-cards-title">More Adventures</h2>
+            <p class="tours-cards-subtitle">Custom packages for every traveller</p>
+            <div class="tours-cards">
+                <article class="tours-card">
+                    <div class="tours-card-image">
+                        <img src="images/atsource.jpeg" alt="Jinja Tours & Adventure">
+                    </div>
+                    <div class="tours-card-body">
+                        <h3>Jinja Tours & Adventure</h3>
+                        <p>Experience the adventure capital of East Africa! From white water rafting on the Nile to bungee jumping and kayaking, Jinja offers unforgettable thrills.</p>
+                        <ul>
+                            <li>White water rafting on the Nile</li>
+                            <li>Bungee jumping</li>
+                            <li>Kayaking and water sports</li>
+                            <li>Source of the Nile visit</li>
+                        </ul>
+                        <div class="tours-card-footer">
+                            <span>Custom Packages</span>
+                            <a href="contact.html" class="tours-btn tours-btn--small">Book Now</a>
+                        </div>
+                    </div>
+                </article>
+                <article class="tours-card">
+                    <div class="tours-card-image">
+                        <img src="images/falls2.jpeg" alt="Sipi Falls Hiking & Adventure">
+                    </div>
+                    <div class="tours-card-body">
+                        <h3>Sipi Falls Hiking & Adventure</h3>
+                        <p>Discover the stunning Sipi Falls with guided hiking tours. Breathtaking waterfalls, coffee plantations, and panoramic mountain views.</p>
+                        <ul>
+                            <li>Three stunning waterfalls</li>
+                            <li>Guided hiking trails</li>
+                            <li>Coffee plantation tours</li>
+                            <li>Cultural experiences</li>
+                        </ul>
+                        <div class="tours-card-footer">
+                            <span>Custom Packages</span>
+                            <a href="contact.html" class="tours-btn tours-btn--small">Book Now</a>
+                        </div>
+                    </div>
+                </article>
+                <article class="tours-card">
+                    <div class="tours-card-image">
+                        <img src="images/falls.jpeg" alt="Mount Elgon Hiking & Adventure">
+                    </div>
+                    <div class="tours-card-body">
+                        <h3>Mount Elgon Hiking & Adventure</h3>
+                        <p>Conquer Mount Elgon with expert-guided hiking tours. Diverse wildlife, unique flora, and spectacular summit views.</p>
+                        <ul>
+                            <li>Summit hiking expeditions</li>
+                            <li>Wildlife viewing</li>
+                            <li>Expert guides</li>
+                            <li>Camping experiences</li>
+                        </ul>
+                        <div class="tours-card-footer">
+                            <span>Custom Packages</span>
+                            <a href="contact.html" class="tours-btn tours-btn--small">Book Now</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="tours-cta">
+        <div class="tours-container tours-cta-inner">
+            <h2 class="tours-cta-title">Customize Your Adventure</h2>
+            <p class="tours-cta-text">All our tours can be customized to fit your preferences, schedule, and budget. Contact us to create your perfect Uganda adventure!</p>
+            <a href="contact.html" class="tours-btn tours-btn--light">Plan Your Tour</a>
         </div>
     </section>
 
     <div id="footer-placeholder"></div>
 
     <style>
-        * {
-            font-family: Cambria, 'Hoefler Text', Utopia, 'Liberation Serif', 'Nimbus Roman No9 L Regular', Times, 'Times New Roman', serif !important;
+        .tours-hero {
+            position: relative;
+            padding: 100px 24px 80px;
+            text-align: center;
+            background-image: url('images/tourandguide.jpeg');
+            background-size: cover;
+            background-position: center;
         }
-        
-        section div[style*="border-top: 4px solid"]:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2) !important;
+        .tours-hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(78, 52, 46, 0.82) 0%, rgba(109, 76, 65, 0.78) 45%, rgba(255, 143, 0, 0.55) 100%);
         }
-        
-        a:hover {
-            transform: translateY(-2px);
+        .tours-hero-content { position: relative; z-index: 1; max-width: 720px; margin: 0 auto; }
+        .tours-hero-title { font-size: 2.75rem; margin: 0 0 16px; font-weight: 700; color: white; text-shadow: 0 2px 12px rgba(0,0,0,0.35); }
+        .tours-hero-subtitle { font-size: 1.2rem; margin: 0; color: rgba(255,255,255,0.95); font-weight: 500; }
+        .tours-container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+        .tours-section { padding: 72px 0; background: #fff; }
+        .tours-section--alt { background: #f8f8f8; }
+        .tours-label {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: #FF8F00;
+            margin-bottom: 10px;
         }
-        
+        .tours-heading { font-size: 2rem; color: #1a1514; margin: 0 0 20px; font-weight: 700; }
+        .tours-text { color: #555; font-size: 1.05rem; line-height: 1.8; margin: 0 0 24px; }
+        .tours-btn {
+            display: inline-block;
+            background: #FF8F00;
+            color: white;
+            padding: 14px 28px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.25s ease;
+            box-shadow: 0 4px 16px rgba(255, 143, 0, 0.4);
+        }
+        .tours-btn:hover { box-shadow: 0 6px 22px rgba(255, 143, 0, 0.5); }
+        .tours-btn--light { background: #FF8F00; color: white; }
+        .tours-btn--small { padding: 10px 22px; font-size: 0.95rem; }
+        .tours-split {
+            display: grid;
+            grid-template-columns: 0.95fr 1.05fr;
+            gap: 56px;
+            align-items: center;
+        }
+        .tours-split--reverse { direction: rtl; }
+        .tours-split--reverse > * { direction: ltr; }
+        .tours-split-image {
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+        }
+        .tours-split-image img { width: 100%; height: 340px; object-fit: cover; display: block; }
+        .tours-split-content { text-align: left; }
+        .tours-rafting {
+            position: relative;
+            padding: 72px 24px;
+            color: white;
+            text-align: center;
+        }
+        .tours-rafting-bg {
+            position: absolute;
+            inset: 0;
+            background-size: cover;
+            background-position: center;
+        }
+        .tours-rafting-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(78, 52, 46, 0.88) 0%, rgba(109, 76, 65, 0.85) 50%, rgba(61, 41, 35, 0.9) 100%);
+        }
+        .tours-rafting-inner { position: relative; z-index: 1; max-width: 680px; margin: 0 auto; }
+        .tours-rafting-title { font-size: 2.25rem; margin: 0 0 16px; font-weight: 700; color: white; }
+        .tours-rafting-desc { font-size: 1.1rem; line-height: 1.75; margin: 0 0 28px; opacity: 0.95; }
+        .tours-rafting-includes {
+            background: rgba(255,255,255,0.1);
+            border-radius: 16px;
+            padding: 28px 32px;
+            margin-bottom: 28px;
+            border: 1px solid rgba(255,255,255,0.15);
+            text-align: left;
+        }
+        .tours-rafting-includes h3 { font-size: 1.1rem; margin: 0 0 14px; font-weight: 600; color: #FFC107; }
+        .tours-rafting-includes ul { margin: 0; padding-left: 22px; line-height: 1.9; font-size: 1.05rem; opacity: 0.95; }
+        .tours-cards-section { padding: 72px 0; background: #fff; }
+        .tours-cards-title { text-align: center; font-size: 2rem; color: #1a1514; margin: 0 0 8px; font-weight: 700; }
+        .tours-cards-subtitle { text-align: center; color: #666; font-size: 1.05rem; margin: 0 0 40px; }
+        .tours-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 32px;
+        }
+        .tours-card {
+            background: #fff;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+            border: 1px solid rgba(0,0,0,0.06);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .tours-card:hover { transform: translateY(-8px); box-shadow: 0 16px 40px rgba(0,0,0,0.12); }
+        .tours-card-image { height: 240px; overflow: hidden; }
+        .tours-card-image img { width: 100%; height: 100%; object-fit: cover; }
+        .tours-card-body { padding: 28px 26px; }
+        .tours-card-body h3 { font-size: 1.4rem; color: #1a1514; margin: 0 0 12px; font-weight: 600; }
+        .tours-card-body p { color: #555; font-size: 0.98rem; line-height: 1.65; margin: 0 0 16px; }
+        .tours-card-body ul { color: #666; font-size: 0.95rem; line-height: 1.8; padding-left: 20px; margin: 0 0 20px; }
+        .tours-card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+        .tours-card-footer span { font-weight: 700; color: #FF8F00; font-size: 1.1rem; }
+        .tours-cta {
+            padding: 72px 24px;
+            background: linear-gradient(135deg, #4E342E 0%, #6D4C41 50%, #4E342E 100%);
+            color: white;
+            text-align: center;
+        }
+        .tours-cta-inner { max-width: 640px; margin: 0 auto; }
+        .tours-cta-title { font-size: 2rem; margin: 0 0 14px; font-weight: 700; }
+        .tours-cta-text { font-size: 1.1rem; margin: 0 0 28px; opacity: 0.92; line-height: 1.6; }
+        @media (max-width: 992px) {
+            .tours-split, .tours-split--reverse { grid-template-columns: 1fr; gap: 36px; direction: ltr; }
+            .tours-split-image img { height: 280px; }
+        }
         @media (max-width: 768px) {
-            section h1 { 
-                font-size: 2rem !important;
-                line-height: 1.2 !important;
-            }
-            section h2 { 
-                font-size: 1.75rem !important;
-            }
-            section h3 {
-                font-size: 1.4rem !important;
-            }
-            section[style*="padding: 100px 20px"] {
-                padding: 60px 20px !important;
-            }
-            section[style*="padding: 80px 20px"] {
-                padding: 50px 20px !important;
-            }
-            div[style*="grid-template-columns: repeat(auto-fit, minmax(350px"] {
-                grid-template-columns: 1fr !important;
-            }
-            div[style*="height: 280px"] {
-                height: 220px !important;
-            }
-            div[style*="padding: 35px"] {
-                padding: 25px !important;
-            }
-            a[style*="padding: 10px 25px"] {
-                padding: 8px 20px !important;
-                font-size: 0.9rem !important;
-            }
+            .tours-hero { padding: 72px 20px 60px; }
+            .tours-hero-title { font-size: 2rem; }
+            .tours-hero-subtitle { font-size: 1.05rem; }
+            .tours-section, .tours-cards-section { padding: 56px 0; }
+            .tours-rafting { padding: 56px 20px; }
+            .tours-heading { font-size: 1.65rem; }
+            .tours-cards { grid-template-columns: 1fr; }
+            .tours-card-image { height: 220px; }
+            .tours-cta { padding: 56px 20px; }
+            .tours-cta-title { font-size: 1.65rem; }
         }
-        
         @media (max-width: 480px) {
-            section h1 { 
-                font-size: 1.75rem !important;
-            }
-            section h2 { 
-                font-size: 1.5rem !important;
-            }
-            section[style*="padding: 100px 20px"] {
-                padding: 50px 15px !important;
-            }
-            section[style*="padding: 80px 20px"] {
-                padding: 40px 15px !important;
-            }
-            div[style*="padding: 35px"] {
-                padding: 20px !important;
-            }
-            ul[style*="padding-left: 20px"] {
-                padding-left: 15px !important;
-            }
+            .tours-hero-title { font-size: 1.75rem; }
+            .tours-split-image img { height: 240px; }
+            .tours-card-body { padding: 22px 20px; }
+            .tours-card-footer { flex-wrap: wrap; gap: 12px; }
         }
     </style>
 </body>
 </html>
-
