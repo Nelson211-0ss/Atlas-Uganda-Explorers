@@ -1,13 +1,3 @@
-name: Deploy to Cloudflare Pages
-
-on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
-
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -19,11 +9,15 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      # Optional: Add your build step here if your site needs to be compiled
+      # - name: Build
+      #   run: npm run build
+
       - name: Deploy to Cloudflare Pages
-        uses: cloudflare/pages-action@v1
+        uses: cloudflare/wrangler-action@v4
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          projectName: atlas-uganda-explorers  # Your Cloudflare Pages project
-          directory: .
+          # The exact command wrangler uses to deploy static assets to pages
+          command: pages deploy . --project-name=atlas-uganda-explorers
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
