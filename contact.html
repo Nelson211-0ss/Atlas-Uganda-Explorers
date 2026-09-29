@@ -2,297 +2,123 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="Contact Atlas Uganda Explorers in Jinja, Uganda by email, phone or WhatsApp to plan your tailor-made trip.">
+    <meta name="theme-color" content="#10231c">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <title>Contact Us - Atlas Uganda Explorers</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script src="https://unpkg.com/feather-icons"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <noscript><style>.preloader { display: none; }</style></noscript>
     <script src="js/layout.js"></script>
-    <style>
-        .contact-page * { font-family: 'Playfair Display', Georgia, serif !important; }
-        .contact-page a:hover { transform: translateY(-2px); }
-    </style>
 </head>
-<body class="contact-page" style="margin: 0; padding: 0; font-family: 'Playfair Display', Georgia, serif; background-color: #f5f5f5;">
+<body>
+    <div class="preloader" aria-hidden="true">
+        <div class="preloader-inner">
+            <div class="preloader-mark"><i class="fa-solid fa-earth-africa"></i></div>
+            <div class="preloader-word"><span>Atlas Uganda <em>Explorers</em></span></div>
+            <div class="preloader-sub">Gateway to Nature's Wonders</div>
+            <div class="preloader-bar"><span></span></div>
+            <div class="preloader-count">0%</div>
+        </div>
+    </div>
+
     <div id="header-placeholder"></div>
 
-    <!-- Hero with background image -->
-    <section class="contact-hero">
-        <div class="contact-hero-overlay"></div>
-        <div class="contact-hero-content">
-            <h1 class="contact-hero-title">Get In Touch</h1>
-            <p class="contact-hero-subtitle">Ready to start your adventure? Contact us today and we'll help you plan your perfect Uganda experience.</p>
-        </div>
-    </section>
-
-    <!-- Contact info cards + form -->
-    <section class="contact-main">
-        <div class="contact-container">
-            <div class="contact-cards">
-                <a href="mailto:atlasugandaexplorers@gmail.com" class="contact-card">
-                    <div class="contact-card-icon"><i class="fa-solid fa-envelope"></i></div>
-                    <h3>Email Us</h3>
-                    <p>Send us an email anytime</p>
-                    <span class="contact-card-value">atlasugandaexplorers@gmail.com</span>
-                </a>
-                <a href="tel:+256752983701" class="contact-card">
-                    <div class="contact-card-icon"><i class="fa-solid fa-phone"></i></div>
-                    <h3>Call or WhatsApp</h3>
-                    <p>Available for calls and WhatsApp</p>
-                    <span class="contact-card-value">+256 752 983 701</span>
-                </a>
-                <div class="contact-card contact-card-address">
-                    <div class="contact-card-icon"><i class="fa-solid fa-location-dot"></i></div>
-                    <h3>Office Address</h3>
-                    <p class="contact-address">
-                        Plot 32/34 Kutch Road East,<br>
-                        Ground Floor, Royal Park Hotel Building,<br>
-                        Opposite Jinja Central Market, Next to Jinja Tax Park,<br>
-                        <strong>Jinja, Uganda 🇺🇬</strong>
-                    </p>
+    <main>
+        <section class="page-hero">
+            <div class="page-hero-media" data-parallax="0.2"><img src="images/atsource.jpeg" alt=""></div>
+            <div class="container page-hero-content">
+                <nav class="breadcrumb" aria-label="Breadcrumb" data-reveal="up"><a href="index.html">Home</a><span>/</span><span>Contact</span></nav>
+                <h1 data-split style="margin-top: 20px;">
+                    <span class="line"><span>Get in</span></span>
+                    <span class="line"><span><span class="serif">touch</span></span></span>
+                </h1>
+                <div class="page-hero-foot">
+                    <p data-reveal="up" style="--d: 0.3s">Ready to start your adventure? Contact us today and we'll help you plan your perfect Uganda experience.</p>
                 </div>
             </div>
+        </section>
 
-            <div class="contact-form-wrap">
-                <div class="contact-form-card">
-                    <h2 class="contact-form-title">Send Us a Message</h2>
-                    <p class="contact-form-desc">Fill out the form below and we'll get back to you as soon as possible.</p>
-                    <form class="contact-form">
-                        <div class="contact-field">
-                            <label for="contact-name">Your Name</label>
-                            <input id="contact-name" type="text" placeholder="Your name" required>
+        <section class="section">
+            <div class="container contact-grid">
+                <div>
+                    <span class="eyebrow" data-reveal="up">Contact details</span>
+                    <h2 class="h2" data-split>
+                        <span class="line"><span>We'd love to</span></span>
+                        <span class="line"><span><span class="serif">hear from you</span></span></span>
+                    </h2>
+                    <div class="contact-list" data-stagger="0.1">
+                        <a href="mailto:atlasugandaexplorers@gmail.com" class="contact-item">
+                            <span class="svc-card-icon"><i class="fa-regular fa-envelope" aria-hidden="true"></i></span>
+                            <div><small>Email us</small><strong>atlasugandaexplorers@gmail.com</strong><span>Send us an email anytime</span></div>
+                        </a>
+                        <a href="tel:+256752983701" class="contact-item">
+                            <span class="svc-card-icon"><i class="fa-solid fa-phone" aria-hidden="true"></i></span>
+                            <div><small>Call</small><strong>+256 752 983 701</strong><span>Available for calls</span></div>
+                        </a>
+                        <a href="https://wa.me/256752983701" target="_blank" rel="noopener" class="contact-item">
+                            <span class="svc-card-icon"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></span>
+                            <div><small>WhatsApp</small><strong>+256 752 983 701</strong><span>Chat with us on WhatsApp</span></div>
+                        </a>
+                        <div class="contact-item">
+                            <span class="svc-card-icon"><i class="fa-solid fa-location-dot" aria-hidden="true"></i></span>
+                            <div><small>Office address</small><strong>Jinja, Uganda 🇺🇬</strong><span>Plot 32/34 Kutch Road East, Ground Floor, Royal Park Hotel Building, opposite Jinja Central Market, next to Jinja Taxi Park</span></div>
                         </div>
-                        <div class="contact-field">
-                            <label for="contact-email">Your Email</label>
-                            <input id="contact-email" type="email" placeholder="your@email.com" required>
+                    </div>
+                </div>
+
+                <div class="form-card" data-reveal="up" style="--d: 0.15s">
+                    <h2 class="h3">Send us a message</h2>
+                    <p class="lead" style="margin-top: 10px; font-size: 1rem;">Fill out the form and we'll get back to you as soon as possible.</p>
+                    <form class="form-grid" data-contact-form>
+                        <div class="field">
+                            <label for="contact-name">Your name</label>
+                            <input id="contact-name" name="name" type="text" placeholder="Your name" autocomplete="name" required>
                         </div>
-                        <div class="contact-field">
-                            <label for="contact-phone">Phone (Optional)</label>
-                            <input id="contact-phone" type="tel" placeholder="+256 ...">
+                        <div class="field">
+                            <label for="contact-email">Your email</label>
+                            <input id="contact-email" name="email" type="email" placeholder="your@email.com" autocomplete="email" required>
                         </div>
-                        <div class="contact-field">
-                            <label for="contact-message">Your Message</label>
-                            <textarea id="contact-message" placeholder="Tell us about your trip or question..." rows="5" required></textarea>
+                        <div class="field">
+                            <label for="contact-phone">Phone (optional)</label>
+                            <input id="contact-phone" name="phone" type="tel" placeholder="+256 ..." autocomplete="tel">
                         </div>
-                        <button type="submit" class="contact-submit">Send Message</button>
+                        <div class="field">
+                            <label for="contact-interest">Interested in</label>
+                            <select id="contact-interest" name="interest">
+                                <option value="">Select an option</option>
+                                <option>Jinja Tours &amp; Adventure</option>
+                                <option>White Water Rafting</option>
+                                <option>Wilderness Exploration</option>
+                                <option>Sipi Falls Adventure</option>
+                                <option>Mount Elgon Hiking</option>
+                                <option>Cultural Heritage Tour</option>
+                                <option>Honeymoon &amp; Couple Trip</option>
+                                <option>Family &amp; Group Tour</option>
+                                <option>Corporate Team Building</option>
+                                <option>Hotel Booking</option>
+                                <option>Airport Meet &amp; Greet</option>
+                                <option>Something else</option>
+                            </select>
+                        </div>
+                        <div class="field field--full">
+                            <label for="contact-message">Your message</label>
+                            <textarea id="contact-message" name="message" placeholder="Tell us about your trip or question..." rows="5" required></textarea>
+                        </div>
+                        <div class="field--full form-actions">
+                            <button type="submit" class="btn btn--primary">Send message <i class="fa-solid fa-paper-plane" aria-hidden="true"></i></button>
+                            <p data-form-note>This opens your email app with your message ready to send.</p>
+                        </div>
                     </form>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <div id="footer-placeholder"></div>
-
-    <style>
-        .contact-hero {
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 100px 24px 80px;
-            background-image: url('images/atsource.jpeg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-        }
-        .contact-hero-overlay {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(135deg, rgba(78, 52, 46, 0.85) 0%, rgba(109, 76, 65, 0.8) 40%, rgba(255, 143, 0, 0.6) 100%);
-        }
-        .contact-hero-content {
-            position: relative;
-            z-index: 1;
-            max-width: 720px;
-        }
-        .contact-hero-title {
-            font-size: 2.75rem;
-            margin: 0 0 16px;
-            font-weight: 700;
-            color: white;
-            text-shadow: 0 2px 12px rgba(0,0,0,0.3);
-        }
-        .contact-hero-subtitle {
-            font-size: 1.2rem;
-            margin: 0;
-            color: rgba(255,255,255,0.95);
-            line-height: 1.5;
-            font-weight: 500;
-        }
-        .contact-container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
-        .contact-main {
-            padding: 64px 0 80px;
-            background: #f8f8f8;
-        }
-        .contact-cards {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
-            margin-bottom: 56px;
-        }
-        .contact-card {
-            background: white;
-            border-radius: 16px;
-            padding: 32px 28px;
-            text-decoration: none;
-            color: inherit;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
-            border: 1px solid rgba(0,0,0,0.04);
-            transition: transform 0.25s ease, box-shadow 0.25s ease;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-        }
-        .contact-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 12px 32px rgba(0,0,0,0.12);
-        }
-        .contact-card-address {
-            cursor: default;
-            align-items: flex-start;
-            text-align: left;
-        }
-        .contact-card-address:hover {
-            transform: none;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
-        }
-        .contact-card-icon {
-            width: 56px;
-            height: 56px;
-            border-radius: 14px;
-            background: linear-gradient(135deg, #FF8F00 0%, #FFC107 100%);
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            margin-bottom: 20px;
-        }
-        .contact-card h3 {
-            font-size: 1.2rem;
-            color: #1a1514;
-            margin: 0 0 8px;
-            font-weight: 600;
-        }
-        .contact-card p {
-            font-size: 0.95rem;
-            color: #666;
-            margin: 0 0 12px;
-            line-height: 1.5;
-        }
-        .contact-address {
-            font-size: 0.95rem !important;
-            color: #555 !important;
-            line-height: 1.7 !important;
-            margin: 0 !important;
-        }
-        .contact-address strong { color: #4E342E; }
-        .contact-card-value {
-            font-size: 1.05rem;
-            font-weight: 600;
-            color: #FF8F00;
-        }
-        .contact-form-wrap {
-            max-width: 640px;
-            margin: 0 auto;
-        }
-        .contact-form-card {
-            background: white;
-            border-radius: 20px;
-            padding: 48px 44px;
-            box-shadow: 0 8px 40px rgba(0,0,0,0.08);
-            border: 1px solid rgba(0,0,0,0.06);
-        }
-        .contact-form-title {
-            font-size: 1.85rem;
-            color: #1a1514;
-            margin: 0 0 10px;
-            font-weight: 700;
-        }
-        .contact-form-desc {
-            font-size: 1rem;
-            color: #666;
-            margin: 0 0 32px;
-            line-height: 1.5;
-        }
-        .contact-form {
-            display: flex;
-            flex-direction: column;
-            gap: 22px;
-        }
-        .contact-field label {
-            display: block;
-            font-size: 0.9rem;
-            font-weight: 600;
-            color: #333;
-            margin-bottom: 8px;
-        }
-        .contact-field input,
-        .contact-field textarea {
-            width: 100%;
-            padding: 14px 18px;
-            border: 1px solid #e0e0e0;
-            border-radius: 12px;
-            font-size: 1rem;
-            font-family: inherit;
-            box-sizing: border-box;
-            transition: border-color 0.2s ease, box-shadow 0.2s ease;
-        }
-        .contact-field input:focus,
-        .contact-field textarea:focus {
-            outline: none;
-            border-color: #FF8F00;
-            box-shadow: 0 0 0 3px rgba(255, 143, 0, 0.15);
-        }
-        .contact-field textarea {
-            resize: vertical;
-            min-height: 120px;
-        }
-        .contact-submit {
-            margin-top: 8px;
-            padding: 16px 32px;
-            background: linear-gradient(135deg, #FF8F00 0%, #FFA000 100%);
-            color: white;
-            border: none;
-            border-radius: 50px;
-            font-size: 1.05rem;
-            font-weight: 600;
-            cursor: pointer;
-            font-family: inherit;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-            box-shadow: 0 4px 20px rgba(255, 143, 0, 0.4);
-        }
-        .contact-submit:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 24px rgba(255, 143, 0, 0.5);
-        }
-        @media (max-width: 992px) {
-            .contact-cards { grid-template-columns: 1fr; }
-        }
-        @media (max-width: 768px) {
-            .contact-hero {
-                padding: 72px 20px 60px;
-            }
-            .contact-hero-title { font-size: 2.2rem; }
-            .contact-hero-subtitle { font-size: 1.05rem; }
-            .contact-main { padding: 48px 0 64px; }
-            .contact-cards { margin-bottom: 40px; gap: 20px; }
-            .contact-form-card { padding: 36px 24px; }
-            .contact-form-title { font-size: 1.6rem; }
-        }
-        @media (max-width: 480px) {
-            .contact-hero-title { font-size: 1.85rem; }
-            .contact-card { padding: 28px 22px; }
-        }
-    </style>
 </body>
 </html>

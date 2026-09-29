@@ -1,125 +1,25 @@
-<header class="site-header" style="background: linear-gradient(135deg, #4E342E 0%, #6D4C41 100%); color: white; padding: 0; box-shadow: 0 2px 10px rgba(0,0,0,0.2);">
-    <nav class="main-nav" style="max-width: 1200px; margin: 0 auto; padding: 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0;">
-        <a href="index.html" class="nav-logo" style="display: flex; align-items: center; gap: 15px; text-decoration: none; color: white; flex-shrink: 0;">
-            <i class="fa-solid fa-globe" style="font-size: 32px; color: #FFC107;"></i>
-            <div style="font-size: 2rem; font-weight: 700; letter-spacing: 1px; color: white;">
-                Atlas Uganda Explorers
-            </div>
+<header class="site-header">
+    <nav class="nav container" aria-label="Main">
+        <a href="index.html" class="nav-logo" aria-label="Atlas Uganda Explorers – Home">
+            <span class="nav-logo-mark"><i class="fa-solid fa-earth-africa" aria-hidden="true"></i></span>
+            <span class="nav-logo-text">Atlas Uganda <small>Explorers · Jinja</small></span>
         </a>
-        <button type="button" class="menu-toggle" aria-label="Toggle menu" style="display: none; background: none; border: none; color: white; cursor: pointer; padding: 8px; font-size: 1.5rem; z-index: 1001; flex-shrink: 0;">
-            <i class="fa-solid fa-bars" id="menu-icon" style="font-size: 28px; color: white;"></i>
-        </button>
-        <ul class="nav-menu" style="display: flex; list-style: none; gap: 30px; margin: 0; padding: 0; flex-wrap: wrap; align-items: center;">
-            <li><a href="index.html" style="color: white; text-decoration: none; font-weight: 500; transition: color 0.3s ease; padding: 8px 0;">Home</a></li>
-            <li><a href="tours.html" style="color: white; text-decoration: none; font-weight: 500; transition: color 0.3s ease; padding: 8px 0;">Tours</a></li>
-            <li><a href="services.html" style="color: white; text-decoration: none; font-weight: 500; transition: color 0.3s ease; padding: 8px 0;">Services</a></li>
-            <li><a href="about.html" style="color: white; text-decoration: none; font-weight: 500; transition: color 0.3s ease; padding: 8px 0;">About</a></li>
-            <li><a href="contact.html" style="color: white; text-decoration: none; font-weight: 500; transition: color 0.3s ease; padding: 8px 0;">Contact</a></li>
-            <li><a href="contact.html" style="background-color: #FF8F00; color: white; padding: 10px 25px; text-decoration: none; border-radius: 25px; font-weight: 600; transition: all 0.3s ease; display: inline-block; box-shadow: 0 4px 15px rgba(255, 143, 0, 0.3);">Book Now</a></li>
+        <ul class="nav-menu" id="nav-menu">
+            <li><a href="index.html"><span class="nav-index">01</span>Home</a></li>
+            <li><a href="tours.html"><span class="nav-index">02</span>Tours</a></li>
+            <li><a href="services.html"><span class="nav-index">03</span>Services</a></li>
+            <li><a href="about.html"><span class="nav-index">04</span>About</a></li>
+            <li><a href="contact.html"><span class="nav-index">05</span>Contact</a></li>
+            <li class="nav-menu-foot">
+                <a href="mailto:atlasugandaexplorers@gmail.com">atlasugandaexplorers@gmail.com</a>
+                <a href="tel:+256752983701">+256 752 983 701</a>
+            </li>
         </ul>
+        <div class="nav-actions">
+            <a href="contact.html" class="btn btn--primary nav-cta">Book a trip <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+            <button type="button" class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu">
+                <span></span><span></span>
+            </button>
+        </div>
     </nav>
-    <style>
-        .site-header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-            width: 100%;
-        }
-        .site-header, .site-header * {
-            font-family: 'Playfair Display', Georgia, serif !important;
-        }
-        header a:hover {
-            color: #FFC107 !important;
-            transform: translateY(-2px);
-        }
-        header a[style*="background-color"]:hover {
-            background-color: #FFA000 !important;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(255, 143, 0, 0.4) !important;
-        }
-        header a[href="index.html"]:hover {
-            color: white !important;
-            opacity: 0.9;
-        }
-        
-        .menu-toggle {
-            transition: transform 0.3s ease;
-        }
-        
-        .menu-toggle:hover {
-            opacity: 0.8;
-        }
-        
-        @media (max-width: 768px) {
-            .main-nav {
-                flex-direction: row !important;
-                align-items: center !important;
-                justify-content: space-between !important;
-                row-gap: 0 !important;
-            }
-            
-            .menu-toggle {
-                display: flex !important;
-                align-items: center;
-                justify-content: center;
-            }
-            
-            .nav-menu {
-                display: none !important;
-                flex-direction: column !important;
-                gap: 0 !important;
-                width: 100% !important;
-                flex-basis: 100% !important;
-                order: 99 !important;
-                margin-top: 16px !important;
-                padding: 16px 0 !important;
-                background: rgba(62, 39, 35, 0.98) !important;
-                border-radius: 10px !important;
-                border-top: 1px solid rgba(255,255,255,0.1);
-            }
-            
-            .nav-menu.active {
-                display: flex !important;
-            }
-            
-            .nav-logo div {
-                font-size: 1.5rem !important;
-            }
-            
-            .nav-menu a[style*="padding: 10px 25px"] {
-                padding: 12px 20px !important;
-                font-size: 0.9rem !important;
-                width: 100% !important;
-                text-align: center !important;
-                box-sizing: border-box !important;
-            }
-            
-            .nav-menu li {
-                width: 100% !important;
-                margin: 0 !important;
-            }
-            
-            .nav-menu li a {
-                display: block !important;
-                padding: 12px 20px !important;
-                width: 100% !important;
-                box-sizing: border-box !important;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .main-nav {
-                padding: 15px !important;
-            }
-            .nav-logo div {
-                font-size: 1.25rem !important;
-            }
-            .nav-menu li a {
-                font-size: 0.95rem !important;
-            }
-        }
-    </style>
 </header>
-

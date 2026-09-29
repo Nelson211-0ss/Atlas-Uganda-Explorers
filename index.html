@@ -2,395 +2,326 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="Atlas Uganda Explorers – a tour and travel company based in Jinja, Uganda. Tailor-made tours, safaris, adventures and cultural experiences.">
+    <meta name="theme-color" content="#10231c">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <title>Atlas Uganda Explorers - Gateway to Nature's Wonders</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script src="https://unpkg.com/feather-icons"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <noscript><style>.preloader { display: none; }</style></noscript>
     <script src="js/layout.js"></script>
-    <script>
-        // Image Slider Functionality
-        let currentSlideIndex = 0;
-        let slides = [];
-        let dots = [];
-        
-        function initSlider() {
-            slides = document.getElementsByClassName('slide');
-            dots = document.getElementsByClassName('slider-dot');
-            if (slides.length > 0) {
-                showSlide(0);
-                // Auto-advance slides every 5 seconds
-                setInterval(nextSlide, 5000);
-            }
-        }
-        
-        function showSlide(n) {
-            if (slides.length === 0) return;
-            
-            if (n >= slides.length) { currentSlideIndex = 0; }
-            if (n < 0) { currentSlideIndex = slides.length - 1; }
-            
-            for (let i = 0; i < slides.length; i++) {
-                slides[i].style.opacity = '0';
-                if (dots[i]) dots[i].style.opacity = '0.4';
-            }
-            
-            slides[currentSlideIndex].style.opacity = '1';
-            if (dots[currentSlideIndex]) dots[currentSlideIndex].style.opacity = '0.7';
-        }
-        
-        function nextSlide() {
-            currentSlideIndex++;
-            if (currentSlideIndex >= slides.length) { currentSlideIndex = 0; }
-            showSlide(currentSlideIndex);
-        }
-        
-        function currentSlide(n) {
-            currentSlideIndex = n;
-            showSlide(currentSlideIndex);
-        }
-        
-        // Initialize slider when DOM is ready
-        window.addEventListener('DOMContentLoaded', function() {
-            setTimeout(initSlider, 200);
-        });
-    </script>
 </head>
-<body style="margin: 0; padding: 0; font-family: 'Playfair Display', Georgia, serif; background-color: #f5f5f5;">
-    <!-- Header placeholder -->
+<body>
+    <div class="preloader" aria-hidden="true">
+        <div class="preloader-inner">
+            <div class="preloader-mark"><i class="fa-solid fa-earth-africa"></i></div>
+            <div class="preloader-word"><span>Atlas Uganda <em>Explorers</em></span></div>
+            <div class="preloader-sub">Gateway to Nature's Wonders</div>
+            <div class="preloader-bar"><span></span></div>
+            <div class="preloader-count">0%</div>
+        </div>
+    </div>
+
     <div id="header-placeholder"></div>
 
-    <!-- Hero Section with Image Slider -->
-    <section style="position: relative; overflow: hidden; min-height: 100vh; display: flex; align-items: center;">
-        <!-- Image Slider -->
-        <div id="hero-slider" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1;">
-            <div class="slide active" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url('images/atsource.jpeg'); background-size: cover; background-position: center; opacity: 1; transition: opacity 1s ease-in-out;"></div>
-            <div class="slide" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url('images/falls.jpeg'); background-size: cover; background-position: center; opacity: 0; transition: opacity 1s ease-in-out;"></div>
-            <div class="slide" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url('images/group.jpeg'); background-size: cover; background-position: center; opacity: 0; transition: opacity 1s ease-in-out;"></div>
-            <div class="slide" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url('images/onboat.jpeg'); background-size: cover; background-position: center; opacity: 0; transition: opacity 1s ease-in-out;"></div>
-            <div class="slide" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url('images/tourandguide.jpeg'); background-size: cover; background-position: center; opacity: 0; transition: opacity 1s ease-in-out;"></div>
-        </div>
-        
-        <!-- Overlay -->
-        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, rgba(78, 52, 46, 0.75) 0%, rgba(109, 76, 65, 0.7) 40%, rgba(255, 143, 0, 0.6) 80%, rgba(255, 193, 7, 0.5) 100%); z-index: 2;"></div>
-        
-        <!-- Content -->
-        <div style="max-width: 1200px; margin: 0 auto; position: relative; z-index: 3; padding: 120px 20px; text-align: center; width: 100%;">
-            <h1 style="font-size: 3.5rem; margin-bottom: 20px; font-weight: 700; text-shadow: 2px 2px 8px rgba(0,0,0,0.5); animation: fadeIn 1s ease-in; color: white;">
-                Welcome to Atlas Ug-Explorers
-            </h1>
-            <p style="font-size: 1.5rem; margin-bottom: 30px; opacity: 0.98; max-width: 800px; margin-left: auto; margin-right: auto; font-weight: 500; color: white; text-shadow: 1px 1px 4px rgba(0,0,0,0.3);">
-                Gateway to Nature's Wonders
-            </p>
-            <p style="font-size: 1.1rem; margin-bottom: 40px; opacity: 0.95; max-width: 700px; margin-left: auto; margin-right: auto; line-height: 1.8; color: white; text-shadow: 1px 1px 4px rgba(0,0,0,0.3);">
-                We are a Tour and Travel Company Based in Jinja, Uganda. We specialize in creating tailor-made travel experiences for families, couples, groups, and corporate teams.
-            </p>
-            <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
-                <a href="tours.html" style="background-color: #FF8F00; color: white; padding: 15px 40px; text-decoration: none; border-radius: 50px; font-weight: 600; font-size: 1.1rem; transition: all 0.3s ease; display: inline-block; box-shadow: 0 4px 15px rgba(255, 143, 0, 0.5);">
-                    Explore Tours
-                </a>
-                <a href="contact.html" style="background-color: transparent; color: white; padding: 15px 40px; text-decoration: none; border: 2px solid white; border-radius: 50px; font-weight: 600; font-size: 1.1rem; transition: all 0.3s ease; display: inline-block;">
-                    Contact Us
-                </a>
+    <main>
+        <!-- Hero -->
+        <section class="hero" aria-label="Welcome">
+            <div class="hero-slides">
+                <div class="hero-slide is-active" data-label="Source of the Nile, Jinja"><img src="images/atsource.jpeg" alt="Traveller resting on a jetty at the Source of the Nile"></div>
+                <div class="hero-slide" data-label="Sipi Falls, Mount Elgon"><img src="images/falls.jpeg" alt="Sipi Falls on the slopes of Mount Elgon"></div>
+                <div class="hero-slide" data-label="Group adventures"><img src="images/group.jpeg" alt="A group of travellers on tour"></div>
+                <div class="hero-slide" data-label="Boat cruise on the Nile"><img src="images/onboat.jpeg" alt="Travellers on a boat cruise"></div>
+                <div class="hero-slide" data-label="Guided tours"><img src="images/tourandguide.jpeg" alt="Guest with a tour guide"></div>
             </div>
-        </div>
-        
-        <!-- Slider Indicators -->
-        <div style="position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); z-index: 3; display: flex; gap: 10px;">
-            <span class="slider-dot active" onclick="currentSlide(0)" style="width: 12px; height: 12px; border-radius: 50%; background-color: white; cursor: pointer; opacity: 0.7; transition: opacity 0.3s ease;"></span>
-            <span class="slider-dot" onclick="currentSlide(1)" style="width: 12px; height: 12px; border-radius: 50%; background-color: white; cursor: pointer; opacity: 0.4; transition: opacity 0.3s ease;"></span>
-            <span class="slider-dot" onclick="currentSlide(2)" style="width: 12px; height: 12px; border-radius: 50%; background-color: white; cursor: pointer; opacity: 0.4; transition: opacity 0.3s ease;"></span>
-            <span class="slider-dot" onclick="currentSlide(3)" style="width: 12px; height: 12px; border-radius: 50%; background-color: white; cursor: pointer; opacity: 0.4; transition: opacity 0.3s ease;"></span>
-            <span class="slider-dot" onclick="currentSlide(4)" style="width: 12px; height: 12px; border-radius: 50%; background-color: white; cursor: pointer; opacity: 0.4; transition: opacity 0.3s ease;"></span>
-        </div>
-    </section>
 
-    <!-- Services Overview Section -->
-    <section style="padding: 80px 20px; background-color: white;">
-        <div style="max-width: 1200px; margin: 0 auto;">
-            <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 20px; color: #4E342E; font-weight: 700;">
-                Our Services
-            </h2>
-            <p style="text-align: center; color: #666; font-size: 1.1rem; margin-bottom: 60px; max-width: 700px; margin-left: auto; margin-right: auto;">
-                Discover a wide range of travel services tailored to create unforgettable experiences in Uganda
-            </p>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-bottom: 40px;">
-                <div style="text-align: center; padding: 0; border-radius: 15px; background: white; transition: transform 0.3s ease; box-shadow: 0 2px 10px rgba(0,0,0,0.08); border-top: 3px solid #FF8F00; overflow: hidden;">
-                    <div style="height: 200px; background-image: url('images/group.jpeg'); background-size: cover; background-position: center;"></div>
-                    <div style="padding: 30px;">
-                        <div style="margin-bottom: 20px; display: flex; justify-content: center;">
-                            <i class="fa-solid fa-users" style="font-size: 48px; color: #4E342E;"></i>
+            <div class="container hero-inner">
+                <div class="hero-main">
+                    <span class="eyebrow hero-eyebrow" data-reveal="up">Tour &amp; Travel · Jinja, Uganda</span>
+                    <h1 class="display" data-split>
+                        <span class="line"><span>Gateway to</span></span>
+                        <span class="line"><span>Nature's <span class="serif">Wonders</span></span></span>
+                    </h1>
+                    <div class="hero-row">
+                        <div>
+                            <p class="hero-copy" data-reveal="up" style="--d: 0.35s">Welcome to Atlas Ug-Explorers. We create tailor-made travel experiences for families, couples, groups and corporate teams, from the Nile to the mountains.</p>
+                            <div class="hero-actions" data-reveal="up" style="--d: 0.5s">
+                                <a href="tours.html" class="btn btn--primary">Explore tours <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+                                <a href="contact.html" class="btn btn--ghost">Plan my trip</a>
+                            </div>
                         </div>
-                        <h3 style="color: #4E342E; margin-bottom: 15px; font-size: 1.5rem; font-weight: 600;">Customised Family & Group Tours</h3>
-                        <p style="color: #666; line-height: 1.6;">Tailor-made travel experiences designed for families and groups of all sizes.</p>
+                        <span class="hero-scroll" data-reveal="fade" style="--d: 0.8s">Scroll</span>
                     </div>
                 </div>
-                <div style="text-align: center; padding: 0; border-radius: 15px; background: white; transition: transform 0.3s ease; box-shadow: 0 2px 10px rgba(0,0,0,0.08); border-top: 3px solid #FF8F00; overflow: hidden;">
-                    <div style="height: 200px; background-image: url('images/couple.jpeg'); background-size: cover; background-position: center;"></div>
-                    <div style="padding: 30px;">
-                        <div style="margin-bottom: 20px; display: flex; justify-content: center;">
-                            <i class="fa-solid fa-heart" style="font-size: 48px; color: #4E342E;"></i>
-                        </div>
-                        <h3 style="color: #4E342E; margin-bottom: 15px; font-size: 1.5rem; font-weight: 600;">Honeymoon & Couple Trips</h3>
-                        <p style="color: #666; line-height: 1.6;">Romantic getaways and intimate experiences for couples celebrating special moments.</p>
-                    </div>
-                </div>
-                <div style="text-align: center; padding: 0; border-radius: 15px; background: white; transition: transform 0.3s ease; box-shadow: 0 2px 10px rgba(0,0,0,0.08); border-top: 3px solid #FF8F00; overflow: hidden;">
-                    <div style="height: 200px; background-image: url('images/tourandguide.jpeg'); background-size: cover; background-position: center;"></div>
-                    <div style="padding: 30px;">
-                        <div style="margin-bottom: 20px; display: flex; justify-content: center;">
-                            <i class="fa-solid fa-compass" style="font-size: 48px; color: #4E342E;"></i>
-                        </div>
-                        <h3 style="color: #4E342E; margin-bottom: 15px; font-size: 1.5rem; font-weight: 600;">Guided Tours & Safaris</h3>
-                        <p style="color: #666; line-height: 1.6;">Professional guided tours and safaris to Uganda's most spectacular destinations.</p>
+                <div class="hero-meta" data-reveal="fade" style="--d: 0.7s">
+                    <div class="hero-counter"><strong data-slide-current>01</strong><div class="hero-progress"><span></span></div><span>05</span></div>
+                    <div class="hero-caption"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> <span data-slide-label>Source of the Nile, Jinja</span></div>
+                    <div class="hero-nav">
+                        <button type="button" data-slide-prev aria-label="Previous slide"><i class="fa-solid fa-arrow-left"></i></button>
+                        <button type="button" data-slide-next aria-label="Next slide"><i class="fa-solid fa-arrow-right"></i></button>
                     </div>
                 </div>
             </div>
-            <div style="text-align: center; margin-top: 40px;">
-                <a href="services.html" style="background-color: #FF8F00; color: white; padding: 15px 40px; text-decoration: none; border-radius: 50px; font-weight: 600; font-size: 1.1rem; transition: all 0.3s ease; display: inline-block; box-shadow: 0 4px 15px rgba(255, 143, 0, 0.5);">
-                    View All Services
-                </a>
+        </section>
+
+        <!-- Destinations marquee -->
+        <div class="marquee" aria-hidden="true">
+            <div class="marquee-track">
+                <span class="marquee-item">Source of the Nile</span>
+                <span class="marquee-item">Sipi Falls</span>
+                <span class="marquee-item">Mount Elgon</span>
+                <span class="marquee-item">Bujagali Falls</span>
+                <span class="marquee-item">Lake Victoria</span>
+                <span class="marquee-item">Mabira Forest</span>
+                <span class="marquee-item">Itanda Falls</span>
+                <span class="marquee-item">Kagulu Rock</span>
+                <span class="marquee-item">Source of the Nile</span>
+                <span class="marquee-item">Sipi Falls</span>
+                <span class="marquee-item">Mount Elgon</span>
+                <span class="marquee-item">Bujagali Falls</span>
+                <span class="marquee-item">Lake Victoria</span>
+                <span class="marquee-item">Mabira Forest</span>
+                <span class="marquee-item">Itanda Falls</span>
+                <span class="marquee-item">Kagulu Rock</span>
             </div>
         </div>
-    </section>
 
-    <!-- Featured Tours Preview -->
-    <section style="padding: 80px 20px; background: linear-gradient(135deg, #fafafa 0%, #f5f5f5 100%);">
-        <div style="max-width: 1200px; margin: 0 auto;">
-            <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 20px; color: #4E342E; font-weight: 700;">
-                Featured Adventures
-            </h2>
-            <p style="text-align: center; color: #666; font-size: 1.1rem; margin-bottom: 60px; max-width: 700px; margin-left: auto; margin-right: auto;">
-                Experience the best of Uganda with our most popular adventure tours
-            </p>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; margin-bottom: 40px;">
-                <div style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.12); transition: transform 0.3s ease; border-top: 4px solid #03A9F4;">
-                    <div style="height: 250px; background: linear-gradient(135deg, #4E342E 0%, #6D4C41 50%, #FF8F00 100%); background-image: url('images/atsource.jpeg'); background-size: cover; background-position: center; background-blend-mode: overlay; position: relative;">
-                        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(135deg, rgba(78, 52, 46, 0.7) 0%, rgba(109, 76, 65, 0.6) 50%, rgba(255, 143, 0, 0.5) 100%);"></div>
-                    </div>
-                    <div style="padding: 30px;">
-                        <h3 style="color: #4E342E; margin-bottom: 15px; font-size: 1.8rem; font-weight: 600;">Jinja Tours & Adventure</h3>
-                        <p style="color: #666; line-height: 1.8; margin-bottom: 20px;">
-                            Experience the adventure capital of East Africa! From white water rafting on the Nile to bungee jumping and kayaking.
-                        </p>
-                        <div style="display: flex; justify-content: space-between; align-items: center;">
-                            <span style="color: #FF8F00; font-weight: 700; font-size: 1.3rem;">Custom Packages</span>
-                            <a href="tours.html" style="color: #4E342E; text-decoration: none; font-weight: 600; display: flex; align-items: center; gap: 5px;">Learn More <i class="fa-solid fa-arrow-right" style="font-size: 16px; color: #4E342E;"></i></a>
-                        </div>
+        <!-- Intro -->
+        <section class="section section--paper">
+            <div class="container split">
+                <div class="split-media collage">
+                    <div class="media-frame media-frame--tall" data-mask><img src="images/tourandguide.jpeg" alt="Atlas Uganda Explorers guide with a guest" loading="lazy"></div>
+                    <div class="collage-small" data-reveal="scale" style="--d: 0.4s"><img src="images/couple.jpeg" alt="Couple on a trip in Uganda" loading="lazy"></div>
+                    <div class="collage-badge" data-reveal="scale" style="--d: 0.6s">
+                        <svg viewBox="0 0 128 128" aria-hidden="true"><defs><path id="badge-circle" d="M64,64 m-50,0 a50,50 0 1,1 100,0 a50,50 0 1,1 -100,0"/></defs><text><textPath href="#badge-circle">Tailor-made travel • Jinja, Uganda • </textPath></text></svg>
+                        <i class="fa-solid fa-compass" aria-hidden="true"></i>
                     </div>
                 </div>
-                <div style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.12); transition: transform 0.3s ease; border-top: 4px solid #FFC107;">
-                    <div style="height: 250px; background: linear-gradient(135deg, #4E342E 0%, #FF8F00 50%, #FFC107 100%); background-image: url('images/falls.jpeg'); background-size: cover; background-position: center; background-blend-mode: overlay; position: relative;">
-                        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(135deg, rgba(78, 52, 46, 0.7) 0%, rgba(255, 143, 0, 0.6) 50%, rgba(255, 193, 7, 0.5) 100%);"></div>
+                <div class="split-body">
+                    <span class="eyebrow" data-reveal="up">Who we are</span>
+                    <h2 class="h2" data-split>
+                        <span class="line"><span>Journeys shaped</span></span>
+                        <span class="line"><span>around <span class="serif">you</span></span></span>
+                    </h2>
+                    <p class="lead" data-reveal="up">Atlas Uganda Explorers is a full-service tour and travel company based in Jinja City, with nearly a decade of experience across Uganda and East Africa.</p>
+                    <p data-reveal="up">Every itinerary is tailor-made for individuals, families, couples and corporate groups, so each journey is seamless, memorable and built around your interests.</p>
+                    <div class="stats" data-stagger="0.12">
+                        <div><div class="stat-value" data-count="10"><sup>~</sup>0</div><div class="stat-label">Years of experience</div></div>
+                        <div><div class="stat-value" data-count="15">0<sup>+</sup></div><div class="stat-label">Jinja activities</div></div>
+                        <div><div class="stat-value" data-count="100">0<sup>%</sup></div><div class="stat-label">Tailor-made</div></div>
                     </div>
-                    <div style="padding: 30px;">
-                        <h3 style="color: #4E342E; margin-bottom: 15px; font-size: 1.8rem; font-weight: 600;">Sipi Falls Hiking & Adventure</h3>
-                        <p style="color: #666; line-height: 1.8; margin-bottom: 20px;">
-                            Discover the stunning Sipi Falls with guided hiking tours. Experience breathtaking waterfalls and panoramic mountain views.
-                        </p>
-                        <div style="display: flex; justify-content: space-between; align-items: center;">
-                            <span style="color: #FF8F00; font-weight: 700; font-size: 1.3rem;">Custom Packages</span>
-                            <a href="tours.html" style="color: #4E342E; text-decoration: none; font-weight: 600; display: flex; align-items: center; gap: 5px;">Learn More <i class="fa-solid fa-arrow-right" style="font-size: 16px; color: #4E342E;"></i></a>
-                        </div>
-                    </div>
+                    <div data-reveal="up"><a href="about.html" class="link-arrow">More about us <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></div>
                 </div>
             </div>
-            <div style="text-align: center; margin-top: 40px;">
-                <a href="tours.html" style="background-color: #FF8F00; color: white; padding: 15px 40px; text-decoration: none; border-radius: 50px; font-weight: 600; font-size: 1.1rem; transition: all 0.3s ease; display: inline-block; box-shadow: 0 4px 15px rgba(255, 143, 0, 0.5);">
-                    View All Tours
-                </a>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Jinja Cultural Heritage Tour -->
-    <section class="heritage-section" style="padding: 80px 20px; background-color: white;">
-        <div style="max-width: 1200px; margin: 0 auto;">
-            <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 20px; color: #4E342E; font-weight: 700;">
-                Jinja Cultural Heritage Tour
-            </h2>
-            <p style="text-align: center; color: #666; font-size: 1.1rem; margin-bottom: 48px; max-width: 720px; margin-left: auto; margin-right: auto;">
-                Explore Busoga Royal Kingdom's Palace, Jinja local market, craft shops, cultural research centre & museum, Mabira Forest community walk, Sacred Kagulu Rock of Busoga Kingdom, Jinja Railway Museum, and local community tour experiences.
-            </p>
-            <div class="heritage-card" style="display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; background: linear-gradient(135deg, #fafafa 0%, #f5f5f5 100%); border-radius: 20px; overflow: hidden; box-shadow: 0 8px 30px rgba(0,0,0,0.08); max-width: 1000px; margin: 0 auto;">
-                <div class="heritage-image-wrap" style="position: relative; height: 320px; min-height: 280px;">
-                    <img src="images/tourandguide.jpeg" alt="Jinja Cultural Heritage Tour – Busoga Kingdom and local experiences" style="width: 100%; height: 100%; object-fit: cover; display: block;">
-                    <span style="position: absolute; bottom: 12px; left: 50%; transform: translateX(-50%); padding: 6px 14px; background: rgba(78, 52, 46, 0.9); color: rgba(255,255,255,0.95); font-size: 0.85rem; border-radius: 20px; white-space: nowrap;">Photo coming soon</span>
+        <!-- Featured adventures -->
+        <section class="section">
+            <div class="container">
+                <div class="section-head">
+                    <div>
+                        <span class="eyebrow" data-reveal="up">Featured adventures</span>
+                        <h2 class="h2" data-split>
+                            <span class="line"><span>Experiences worth</span></span>
+                            <span class="line"><span>the <span class="serif">journey</span></span></span>
+                        </h2>
+                    </div>
+                    <div data-reveal="up">
+                        <p class="lead">Our most-loved tours, from white water on the Nile to waterfalls on Mount Elgon.</p>
+                        <a href="tours.html" class="link-arrow" style="margin-top: 18px;">View all tours <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+                    </div>
                 </div>
-                <div style="padding: 40px 36px 40px 0;">
-                    <h3 style="color: #4E342E; margin-bottom: 20px; font-size: 1.5rem; font-weight: 600;">What you'll experience</h3>
-                    <ul class="heritage-highlights" style="list-style: none; padding: 0; margin: 0; color: #555; line-height: 1.9; font-size: 1.05rem;">
-                        <li><i class="fa-solid fa-landmark" style="color: #FF8F00; margin-right: 10px; width: 20px;"></i> Busoga Royal Kingdom's Palace</li>
-                        <li><i class="fa-solid fa-store" style="color: #FF8F00; margin-right: 10px; width: 20px;"></i> Jinja local market & craft shops</li>
-                        <li><i class="fa-solid fa-building-columns" style="color: #FF8F00; margin-right: 10px; width: 20px;"></i> Cultural research centre & museum</li>
-                        <li><i class="fa-solid fa-tree" style="color: #FF8F00; margin-right: 10px; width: 20px;"></i> Mabira Forest community walk</li>
-                        <li><i class="fa-solid fa-mountain-sun" style="color: #FF8F00; margin-right: 10px; width: 20px;"></i> Sacred Kagulu Rock of Busoga Kingdom</li>
-                        <li><i class="fa-solid fa-train" style="color: #FF8F00; margin-right: 10px; width: 20px;"></i> Jinja Railway Museum</li>
-                        <li><i class="fa-solid fa-people-group" style="color: #FF8F00; margin-right: 10px; width: 20px;"></i> Local community tour experience</li>
-                    </ul>
-                    <a href="contact.html" style="display: inline-block; margin-top: 24px; background-color: #FF8F00; color: white; padding: 12px 28px; text-decoration: none; border-radius: 50px; font-weight: 600; font-size: 1rem; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(255, 143, 0, 0.4);">
-                        Enquire about this tour
+                <div class="exp-grid" data-stagger="0.1">
+                    <a href="tours.html" class="exp-card exp-card--lg">
+                        <img src="images/onboat.jpeg" alt="Boat adventure on the River Nile" loading="lazy">
+                        <span class="exp-card-tag">Jinja City</span>
+                        <div class="exp-card-body">
+                            <div><h3>Jinja Tours &amp; Adventure</h3><p>The adventure capital of East Africa: rafting, bungee jumping, kayaking and boat cruises on the Nile.</p></div>
+                            <span class="exp-card-arrow"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
+                        </div>
+                    </a>
+                    <a href="tours.html" class="exp-card">
+                        <img src="images/falls2.jpeg" alt="Hiker at Sipi Falls" loading="lazy">
+                        <span class="exp-card-tag">Mount Elgon</span>
+                        <div class="exp-card-body">
+                            <div><h3>Sipi Falls Hiking</h3><p>Three waterfalls, coffee tours, caves and the King's Viewpoint over the Karamoja plains.</p></div>
+                            <span class="exp-card-arrow"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
+                        </div>
+                    </a>
+                    <a href="tours.html" class="exp-card">
+                        <img src="images/whiteboat.jpeg" alt="White water rafting on the Nile" loading="lazy">
+                        <span class="exp-card-tag">4 hours</span>
+                        <div class="exp-card-body">
+                            <div><h3>White Water Rafting</h3><p>From calm to chaos as we paddle towards the waterfalls of the world's longest river.</p></div>
+                            <span class="exp-card-arrow"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
+                        </div>
+                    </a>
+                    <a href="tours.html" class="exp-card exp-card--lg">
+                        <img src="images/falls.jpeg" alt="Waterfall on Mount Elgon" loading="lazy">
+                        <span class="exp-card-tag">Hiking</span>
+                        <div class="exp-card-body">
+                            <div><h3>Mount Elgon Hiking &amp; Adventure</h3><p>Expert-guided summit hikes with diverse wildlife, unique flora and spectacular views.</p></div>
+                            <span class="exp-card-arrow"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
+                        </div>
+                    </a>
+                </div>
+                <div class="rail-hint"><span>Swipe to explore</span><i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i></div>
+            </div>
+        </section>
+
+        <!-- Services -->
+        <section class="section section--dark">
+            <div class="container">
+                <div class="section-head">
+                    <div>
+                        <span class="eyebrow" data-reveal="up">What we do</span>
+                        <h2 class="h2" data-split>
+                            <span class="line"><span>Travel, handled</span></span>
+                            <span class="line"><span><span class="serif">end to end</span></span></span>
+                        </h2>
+                    </div>
+                    <p class="lead" data-reveal="up">From your first enquiry to the airport goodbye, we take care of the details so you can enjoy the journey.</p>
+                </div>
+                <div class="svc-list" data-stagger="0.08">
+                    <a href="services.html" class="svc-row" data-preview="images/group.jpeg">
+                        <span class="svc-row-num">01</span>
+                        <h3>Family &amp; Group Tours</h3>
+                        <p>Tailor-made itineraries that suit everyone's interests, for groups of every size.</p>
+                        <span class="svc-row-arrow"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
+                    </a>
+                    <a href="services.html" class="svc-row" data-preview="images/couple.jpeg">
+                        <span class="svc-row-num">02</span>
+                        <h3>Honeymoon &amp; Couple Trips</h3>
+                        <p>Romantic getaways and intimate experiences for special moments.</p>
+                        <span class="svc-row-arrow"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
+                    </a>
+                    <a href="services.html" class="svc-row" data-preview="images/tourandguide.jpeg">
+                        <span class="svc-row-num">03</span>
+                        <h3>Guided Tours &amp; Safaris</h3>
+                        <p>Certified guides leading you to Uganda's most spectacular destinations.</p>
+                        <span class="svc-row-arrow"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
+                    </a>
+                    <a href="services.html" class="svc-row" data-preview="images/image1.jpeg">
+                        <span class="svc-row-num">04</span>
+                        <h3>Hotel Booking &amp; Reservations</h3>
+                        <p>From luxury to budget, we find the right place to stay.</p>
+                        <span class="svc-row-arrow"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
+                    </a>
+                    <a href="services.html" class="svc-row" data-preview="images/whitegroup.jpeg">
+                        <span class="svc-row-num">05</span>
+                        <h3>Corporate Team Building</h3>
+                        <p>Team building, retreats and events in Uganda's natural settings.</p>
+                        <span class="svc-row-arrow"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
+                    </a>
+                    <a href="services.html" class="svc-row" data-preview="images/whiteboat.jpeg">
+                        <span class="svc-row-num">06</span>
+                        <h3>Airport Meet &amp; Greet</h3>
+                        <p>A seamless, stress-free arrival to start your journey the right way.</p>
+                        <span class="svc-row-arrow"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
                     </a>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Call to Action Section -->
-    <section style="padding: 80px 20px; background: linear-gradient(135deg, #4E342E 0%, #6D4C41 50%, #4E342E 100%); color: white; text-align: center;">
-        <div style="max-width: 800px; margin: 0 auto;">
-            <h2 style="font-size: 2.5rem; margin-bottom: 20px; font-weight: 700;">
-                Ready to Start Your Adventure?
-            </h2>
-            <p style="font-size: 1.2rem; margin-bottom: 40px; opacity: 0.9;">
-                Get in touch with us today and let's plan your perfect Uganda experience.
-            </p>
-            <a href="contact.html" style="background-color: #FF8F00; color: white; padding: 15px 50px; text-decoration: none; border-radius: 50px; font-weight: 600; font-size: 1.1rem; transition: all 0.3s ease; display: inline-block; box-shadow: 0 4px 15px rgba(255, 143, 0, 0.5);">
-                Contact Us Now
-            </a>
-        </div>
-    </section>
+        <!-- Heritage tour -->
+        <section class="section section--paper">
+            <div class="container split split--reverse">
+                <div class="split-media">
+                    <div class="media-frame media-frame--tall" data-mask>
+                        <img src="images/tourandguide.jpeg" alt="Jinja Cultural Heritage Tour – Busoga Kingdom and local experiences" loading="lazy">
+                    </div>
+                    <span class="chip media-chip"><i class="fa-regular fa-image" aria-hidden="true"></i> Photo coming soon</span>
+                </div>
+                <div class="split-body">
+                    <span class="eyebrow" data-reveal="up">Culture &amp; heritage</span>
+                    <h2 class="h2" data-split>
+                        <span class="line"><span>Jinja Cultural</span></span>
+                        <span class="line"><span><span class="serif">Heritage</span> Tour</span></span>
+                    </h2>
+                    <p class="lead" data-reveal="up">Meet the Busoga Kingdom, its people and its stories on a day of palaces, markets, forests and sacred sites.</p>
+                    <ul class="feature-list" data-stagger="0.07">
+                        <li><i class="fa-solid fa-landmark" aria-hidden="true"></i> Busoga Royal Kingdom's Palace</li>
+                        <li><i class="fa-solid fa-store" aria-hidden="true"></i> Jinja local market &amp; craft shops</li>
+                        <li><i class="fa-solid fa-building-columns" aria-hidden="true"></i> Cultural research centre &amp; museum</li>
+                        <li><i class="fa-solid fa-tree" aria-hidden="true"></i> Mabira Forest community walk</li>
+                        <li><i class="fa-solid fa-mountain-sun" aria-hidden="true"></i> Sacred Kagulu Rock of Busoga Kingdom</li>
+                        <li><i class="fa-solid fa-train" aria-hidden="true"></i> Jinja Railway Museum</li>
+                        <li><i class="fa-solid fa-people-group" aria-hidden="true"></i> Local community tour experience</li>
+                    </ul>
+                    <div data-reveal="up"><a href="contact.html" class="btn btn--dark">Enquire about this tour <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></div>
+                </div>
+            </div>
+        </section>
 
-    <!-- Footer placeholder -->
+        <!-- Rafting banner -->
+        <section class="banner">
+            <div class="banner-media" data-parallax="0.18"><img src="images/whiteboat.jpeg" alt="" loading="lazy"></div>
+            <div class="container banner-inner">
+                <div class="banner-grid">
+                    <div>
+                        <span class="eyebrow" style="color:#f3c58f" data-reveal="up">Signature experience</span>
+                        <h2 class="h2" data-split>
+                            <span class="line"><span>From calm to <span class="serif">chaos</span></span></span>
+                            <span class="line"><span>on the world's</span></span>
+                            <span class="line"><span>longest river.</span></span>
+                        </h2>
+                    </div>
+                    <div class="banner-card" data-reveal="up" style="--d: 0.2s">
+                        <h3>4-hour white water rafting includes</h3>
+                        <ul>
+                            <li><i class="fa-solid fa-check" aria-hidden="true"></i> Breakfast</li>
+                            <li><i class="fa-solid fa-check" aria-hidden="true"></i> Snacks</li>
+                            <li><i class="fa-solid fa-check" aria-hidden="true"></i> Photography</li>
+                            <li><i class="fa-solid fa-check" aria-hidden="true"></i> Hotel pick-up &amp; drop-off</li>
+                        </ul>
+                        <a href="contact.html" class="btn btn--light">Book rafting <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How it works -->
+        <section class="section">
+            <div class="container">
+                <div class="section-head section-head--center">
+                    <span class="eyebrow" data-reveal="up">How it works</span>
+                    <h2 class="h2" data-split>
+                        <span class="line"><span>Your trip in <span class="serif">four</span> easy steps</span></span>
+                    </h2>
+                </div>
+                <div class="steps" data-stagger="0.1">
+                    <div class="step"><div class="step-num">01</div><h3>Share your idea</h3><p>Tell us who's travelling, when, and what excites you, whether that's adventure, culture or relaxation.</p></div>
+                    <div class="step"><div class="step-num">02</div><h3>We tailor it</h3><p>We design a custom itinerary around your interests, schedule and budget.</p></div>
+                    <div class="step"><div class="step-num">03</div><h3>We handle the details</h3><p>Hotels, transport, guides and airport meet &amp; greet are all arranged for you.</p></div>
+                    <div class="step"><div class="step-num">04</div><h3>You explore</h3><p>Enjoy a seamless journey with experienced, knowledgeable local guides.</p></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="section" style="padding-top: 0;">
+            <div class="container">
+                <div class="cta" data-reveal="scale">
+                    <div class="cta-media"><img src="images/group.jpeg" alt="" loading="lazy"></div>
+                    <div class="cta-inner">
+                        <h2 class="h2">Ready to start your <span class="serif">adventure?</span></h2>
+                        <div>
+                            <p>Get in touch today and let's plan your perfect Uganda experience.</p>
+                            <div class="cta-actions">
+                                <a href="contact.html" class="btn btn--primary">Contact us <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+                                <a href="https://wa.me/256752983701" target="_blank" rel="noopener" class="btn btn--ghost"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i> WhatsApp</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
     <div id="footer-placeholder"></div>
-
-    <style>
-        * {
-            font-family: 'Playfair Display', Georgia, serif !important;
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        a:hover {
-            transform: translateY(-2px);
-        }
-        
-        .slider-dot:hover {
-            opacity: 1 !important;
-        }
-        
-        section div[style*="border-top: 3px solid"]:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(78, 52, 46, 0.15) !important;
-        }
-        
-        section div[style*="border-top: 4px solid"]:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2) !important;
-        }
-        
-        /* Tablet Styles */
-        @media (max-width: 1024px) {
-            section[style*="min-height: 100vh"] {
-                min-height: 85vh !important;
-            }
-            section[style*="padding: 120px 20px"] {
-                padding: 100px 20px !important;
-            }
-        }
-        
-        /* Mobile Styles */
-        @media (max-width: 768px) {
-            section h1 { 
-                font-size: 2rem !important; 
-                line-height: 1.2 !important;
-                margin-bottom: 15px !important;
-            }
-            section h2 { 
-                font-size: 1.75rem !important; 
-                margin-bottom: 30px !important;
-            }
-            section h3 {
-                font-size: 1.3rem !important;
-            }
-            section[style*="min-height: 100vh"] {
-                min-height: 70vh !important;
-            }
-            section[style*="padding: 120px 20px"] {
-                padding: 60px 20px !important;
-            }
-            section[style*="padding: 80px 20px"] {
-                padding: 50px 20px !important;
-            }
-            div[style*="grid-template-columns: repeat(auto-fit"] {
-                grid-template-columns: 1fr !important;
-            }
-            div[style*="grid-template-columns: repeat(auto-fit, minmax(280px"] {
-                grid-template-columns: 1fr !important;
-            }
-            div[style*="grid-template-columns: repeat(auto-fit, minmax(300px"] {
-                grid-template-columns: 1fr !important;
-            }
-            div[style*="grid-template-columns: repeat(auto-fit, minmax(350px"] {
-                grid-template-columns: 1fr !important;
-            }
-            .heritage-card {
-                grid-template-columns: 1fr !important;
-                gap: 0 !important;
-            }
-            .heritage-image-wrap {
-                height: 260px !important;
-                min-height: 220px !important;
-            }
-            .heritage-section div[style*="padding: 40px 36px"] {
-                padding: 32px 24px 40px !important;
-            }
-            div[style*="display: flex; gap: 20px"] {
-                flex-direction: column !important;
-                gap: 15px !important;
-            }
-            a[style*="padding: 15px 40px"] {
-                padding: 12px 30px !important;
-                font-size: 1rem !important;
-            }
-            p[style*="font-size: 1.5rem"] {
-                font-size: 1.2rem !important;
-            }
-            p[style*="font-size: 1.1rem"] {
-                font-size: 1rem !important;
-            }
-            div[style*="font-size: 2.5rem"] {
-                font-size: 2rem !important;
-            }
-            div[style*="height: 250px"] {
-                height: 200px !important;
-            }
-            div[style*="height: 200px"] {
-                height: 180px !important;
-            }
-        }
-        
-        /* Small Mobile Styles */
-        @media (max-width: 480px) {
-            section h1 { 
-                font-size: 1.75rem !important;
-            }
-            section h2 { 
-                font-size: 1.5rem !important;
-            }
-            section[style*="padding: 120px 20px"] {
-                padding: 50px 15px !important;
-            }
-            section[style*="padding: 80px 20px"] {
-                padding: 40px 15px !important;
-            }
-            a[style*="padding: 15px 40px"] {
-                padding: 10px 25px !important;
-                font-size: 0.9rem !important;
-            }
-            div[style*="gap: 30px"] {
-                gap: 20px !important;
-            }
-            div[style*="gap: 40px"] {
-                gap: 25px !important;
-            }
-        }
-    </style>
 </body>
 </html>
