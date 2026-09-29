@@ -681,14 +681,14 @@ body.menu-open .menu-toggle span:nth-child(2) { top: 22px; transform: translateX
 .banner-card li i { color: #f3c58f; margin-top: 5px; font-size: 0.8rem; }
 
 /* CTA */
-.cta { position: relative; overflow: hidden; border-radius: calc(var(--radius) + 8px); background: var(--ink); color: #fff; }
-.cta-media { position: absolute; inset: 0; }
-.cta-media img { width: 100%; height: 100%; object-fit: cover; opacity: 0.35; transform: scale(1.1); transition: transform 2s var(--ease); }
-.cta:hover .cta-media img { transform: scale(1); }
-.cta-inner { position: relative; z-index: 1; padding: clamp(56px, 9vw, 120px) clamp(24px, 6vw, 90px); display: grid; grid-template-columns: 1.4fr 1fr; gap: 40px; align-items: end; }
+.cta { position: relative; overflow: hidden; background: var(--ink); color: #fff; }
+.cta-media { position: absolute; inset: -15% 0; }
+.cta-media img { width: 100%; height: 100%; object-fit: cover; }
+.cta::after { content: ''; position: absolute; inset: 0; background: rgba(8, 20, 15, 0.7); pointer-events: none; }
+.cta-inner { position: relative; z-index: 1; padding-top: clamp(96px, 13vw, 170px); padding-bottom: clamp(96px, 13vw, 170px); display: grid; grid-template-columns: 1.4fr 1fr; gap: 40px; align-items: end; }
 .cta h2 { color: #fff; }
 .cta .serif { color: #f3c58f; }
-.cta p { color: rgba(255, 255, 255, 0.8); margin-bottom: 28px; }
+.cta p { color: rgba(255, 255, 255, 0.85); margin-bottom: 28px; max-width: 440px; }
 .cta-actions { display: flex; flex-wrap: wrap; gap: 12px; }
 
 /* ==========================================================================
@@ -803,7 +803,7 @@ a.contact-item:hover .svc-card-icon { background: var(--accent); color: #fff; }
 /* ==========================================================================
    Footer
    ========================================================================== */
-.site-footer { background: var(--ink); color: rgba(255, 255, 255, 0.68); padding-top: clamp(72px, 10vw, 120px); overflow: hidden; }
+.site-footer { background: var(--ink); color: rgba(255, 255, 255, 0.68); padding-top: clamp(72px, 10vw, 120px); border-top: 1px solid var(--line-light); overflow: hidden; }
 .footer-top { display: flex; justify-content: space-between; align-items: flex-end; gap: 32px; padding-bottom: 56px; border-bottom: 1px solid var(--line-light); flex-wrap: wrap; }
 .footer-title { color: #fff; font-size: clamp(2.2rem, 5.5vw, 4.6rem); letter-spacing: -0.045em; max-width: 13ch; }
 .footer-title .serif { color: #f3c58f; }
