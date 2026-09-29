@@ -14,16 +14,14 @@ jobs:
     permissions:
       contents: read
       deployments: write
-    name: Deploy to Cloudflare Pages
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
       - name: Deploy to Cloudflare Pages
-        uses: cloudflare/pages-action@v1
+        uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          projectName: atlas-uganda-explorers  # Your Cloudflare Pages project
-          directory: .
+          command: pages deploy . --project-name=atlas-uganda-explorers
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
