@@ -412,7 +412,7 @@ body.menu-open .menu-toggle span:nth-child(2) { top: 22px; transform: translateX
 .marquee:hover .marquee-track { animation-play-state: paused; }
 .marquee-item { display: flex; align-items: center; gap: 36px; padding-right: 36px; font-size: clamp(1.4rem, 3vw, 2.2rem); font-weight: 600; letter-spacing: -0.02em; white-space: nowrap; }
 .marquee-item:nth-child(even) { font-family: var(--font-serif); font-style: italic; font-weight: 400; color: #f3c58f; }
-.marquee-item::after { content: '✦'; font-size: 0.6em; color: var(--accent); font-style: normal; }
+.marquee-item::after { content: ''; width: 10px; height: 10px; border-radius: 50%; background: var(--accent); flex-shrink: 0; }
 @keyframes marquee { to { transform: translateX(-50%); } }
 
 /* ==========================================================================
